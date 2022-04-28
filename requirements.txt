@@ -1,0 +1,3 @@
+rst-to-myst[sphinx]
+mdit-py-plugins==3.0
+myst-parser

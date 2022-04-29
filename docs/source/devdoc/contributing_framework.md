@@ -67,6 +67,16 @@ Usual test execution with  `python -m unittest <path>` will not work because dja
 
 At the current stage frontend testing does not happen. However the backend introduces some *unit_tests_comments* (`utc_...`) to the served html sources, such that the tests cases can roughly check if the expected content is shown.
 
+### Test Web
+When running the unittests for ackrep_web, the `TestUI` tests are usually skipped. If you want to run those tests as well you need to:
+- install splinter and selenium
+  ```
+  pip install splinter
+  pip install selenium
+  ```
+- download [chromedriver](https://chromedriver.chromium.org/home)
+- add the directory of the chrome driver executable to your PATH
+
 ## Running local server
 When developing the frontend, a local server can be run to look at the result.
 

@@ -63,6 +63,7 @@ Information regarding actively contributing to ACKREP on different levels.
 ```{toctree}
 :maxdepth: 1
 :caption: Developer Documentation
+devdoc/constitution
 devdoc/contributing_data
 devdoc/contributing_framework
 devdoc/contributing_deployment

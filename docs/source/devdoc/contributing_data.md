@@ -1,6 +1,9 @@
 (contributing_data)=
 # Contributing to the Data Repo
-Preliminary Guide for Contributing to the Data Repo
+Preliminary Guide for Contributing to the Data Repo.
+
+Please also refer to our [contributing constitution](ref_constitution)
+
 ## Adding Problem-Methode-Solution tuples
 
 - Preparation:

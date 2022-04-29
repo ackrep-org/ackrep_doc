@@ -55,6 +55,8 @@
 
     `pip install -r requirements_runner.txt`
 
+- If the installation of slycot fails, refer to <https://github.com/python-control/Slycot#installing>.
+
 ## With Docker
 
 TODO

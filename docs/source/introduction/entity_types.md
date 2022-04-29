@@ -32,3 +32,6 @@ Alltogether there are the following entities:
 
 **Summary**: In some sense ACKrep translates the concept of continous integration from software
 engineering to research in automatic control.
+
+---
+Read about the [terminology](terminology) used in this project.

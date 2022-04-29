@@ -58,3 +58,6 @@
 ## With Docker
 
 TODO
+
+---
+Continue with [running the code locally](run_local).

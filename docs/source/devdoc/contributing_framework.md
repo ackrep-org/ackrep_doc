@@ -1,3 +1,4 @@
+(contributing_core)=
 # Contributing to Core Framework
 ## Project Structure
 When making changes to the core framework, unittests are employed to endure the integrity of the framwork. The goal is not to test the data of the database (implemented solutions etc.), but rather to ensure that the framework handles the data correctly (e.g. the check-solution function is working correctly). Therefore we use a clone of the data repository `ackrep_for_unittests` for validation. This repository is expected to be located in the project directory and needs to have the **`for_unittests`-branch** checked out. The project structure should looke like this:

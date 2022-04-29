@@ -1,5 +1,6 @@
-# Preliminary Guide for Contributing to the Data Repo
-
+(contributing_data)=
+# Contributing to the Data Repo
+Preliminary Guide for Contributing to the Data Repo
 ## Adding Problem-Methode-Solution tuples
 
 - Preparation:

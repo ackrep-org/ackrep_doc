@@ -1,3 +1,4 @@
+(run_local)=
 # Work locally
 
 In order to evaluate the database locally, the command line interface with the command `ackrep` is used.
@@ -31,3 +32,9 @@ TODO
 The methode packages can be copied and incorporated in personal projects.
 ...
 TODO
+
+---
+If you are having trouble, see [troubleshooting](troubleshooting_users).
+
+Continue understanding the [strucure of the data repo](ref_data_structure).
+

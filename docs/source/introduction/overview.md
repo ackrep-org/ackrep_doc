@@ -1,3 +1,4 @@
+(overview)=
 # Overview
 
 The two main parts of this project are:
@@ -7,3 +8,8 @@ The two main parts of this project are:
     - actual data for the repository
 
 TODO
+
+---
+Read about [entity types](entity_types).
+
+Read about the [terminology](terminology) used in this project.

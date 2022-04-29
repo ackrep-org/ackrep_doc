@@ -1,4 +1,5 @@
 
+(ref_data_structure)=
 # Structure of the Data Repository
 Every entity consists of a subdirectory with a special structure.
 

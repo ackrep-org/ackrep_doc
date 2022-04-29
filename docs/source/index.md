@@ -29,13 +29,14 @@ This research is carried out at the Institute of Control Theory, TU Dresden.
 
 ## General Concept of the Project (Working Title)
 
-Introductory Information:
+Information regarding an overview of the project and some important terms and concepts.
 
 ```{toctree}
 :caption: Introductory Information
 :maxdepth: 1
 introduction/overview
 introduction/entity_types
+introduction/terminology
 ```
 
 ## Working with the Web Server (Working Title)
@@ -53,7 +54,6 @@ Information regarding the local setup and passive usage of ACKREP.
 :caption: User Documentation
 userdoc/installation
 userdoc/run
-userdoc/terminology
 userdoc/data_structure
 userdoc/troubleshooting
 ```

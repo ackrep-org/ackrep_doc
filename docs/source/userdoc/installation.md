@@ -40,8 +40,10 @@
  
     `pip install -e .`
 1. Validate Installation 
-
-    `ackrep --help`
+    ```
+    ackrep --say-hello
+    # Hello!
+    ```
 1. Setup the database
   
     `python manage.py makemigrations`

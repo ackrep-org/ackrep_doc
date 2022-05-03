@@ -67,5 +67,6 @@ devdoc/constitution
 devdoc/contributing_data
 devdoc/contributing_framework
 devdoc/contributing_deployment
+devdoc/design_considerations
 devdoc/troubleshooting
 ```

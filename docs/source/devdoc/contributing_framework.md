@@ -20,7 +20,7 @@ When making changes to the core framework, unittests are employed to endure the 
 
 ## Unittests
 
-As the software is still an early prototype and defining the concrete feature set is subject to ongoing research, only a fraction of the functionality is already covered by tests. However this fraction will increase in the future. The unittest depend on data which is maintained outside of this repo: It is assumed that there is a copy of the `acrep_data` repository named `acrep_data_for_unittests` next to it (see [directory layout](contr_core_structure)) and that its HEAD points to a defined commit (see `ackrep_core.core.test.test_core.default_repo_head_hash`).
+As the software is still an early prototype and defining the concrete feature set is subject to ongoing research, only a fraction of the functionality is already covered by tests. However this fraction will increase in the future. The unittest depend on data which is maintained outside of this repo: It is assumed that there is a copy of the `acrep_data` repository named `acrep_data_for_unittests` next to it (see [directory layout](contr_core_structure)) and that its HEAD points to a defined commit in the `for_unittests`-branch (see `ackrep_core.core.test.test_core.default_repo_head_hash`).
 
 Before the tests can be run for the first time the test database has to be set up like this
 (tested with bash on Linux):

@@ -1,9 +1,9 @@
 (web_overview)=
-# Overview 
+# Web Interface 
 [server_url]: https://testing.ackrep.org
 
 
-The [Web Server][server_url] contains the follwoing features:
+The [Web Interface][server_url] contains the follwoing features:
 
 ## List all entities in database 
 

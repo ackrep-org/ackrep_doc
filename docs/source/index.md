@@ -23,7 +23,7 @@ This research is carried out at the Institute of Control Theory, TU Dresden.
 
 ## Important Links
 
-- [Web Server](https://testing.ackrep.org).
+- [Web Interface](https://testing.ackrep.org).
 - [Official website](https://ackrep.org/) of the project.
 - [Publication](https://ieeexplore.ieee.org/document/9259657) of the research.
 
@@ -39,19 +39,13 @@ introduction/entity_types
 introduction/terminology
 ```
 
-## Working with the Web Server (Working Title)
-
-```{toctree}
-:maxdepth: 1
-:caption: Web Server
-web/index
-```
 
 ## User Documentation
 Information regarding the local setup and passive usage of ACKREP.
 ```{toctree}
 :maxdepth: 1
 :caption: User Documentation
+userdoc/web
 userdoc/installation
 userdoc/run
 userdoc/data_structure

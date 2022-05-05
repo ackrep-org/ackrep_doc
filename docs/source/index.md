@@ -63,4 +63,5 @@ devdoc/contributing_framework
 devdoc/contributing_deployment
 devdoc/design_considerations
 devdoc/troubleshooting
+devdoc/contributing_docs
 ```

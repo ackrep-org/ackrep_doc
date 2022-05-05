@@ -32,29 +32,29 @@ These components are represented by the following **directory layout**:
 
     <ackrep_project_dir>/
     ├── ackrep_deployment/                ← repo with deployment code for the ackrep project
-    │  ├── .git/
-    │  ├── README.md                      ← the currently displayed file (README.md)
-    │  ├── deploy.py                      ← deployment script
-    │  ├── ...
-    │  ├── custom_settings__demo          ← instance-specific settings (not included in the repo)
-    │  │   ├── settings.yml
-    │  │   └── ...
-    │  └── custom_settings__local         ← settings for local testing deployment (included for reference)
-    │      ├── settings.yml
-    │      └── ...
+    │   ├── .git/
+    │   ├── README.md                      ← the currently displayed file (README.md)
+    │   ├── deploy.py                      ← deployment script
+    │   ├── ...
+    │   ├── custom_settings__demo          ← instance-specific settings (not included in the repo)
+    │   │   ├── settings.yml
+    │   │   └── ...
+    │   └── custom_settings__local         ← settings for local testing deployment (included for reference)
+    │       ├── settings.yml
+    │       └── ...
     │
     │
     │
     ├── ackrep_data/                      ← separate repository for ackrep_data
-    │  ├── .git/
-    │  └── ...
+    │   ├── .git/
+    │   └── ...
     │
     ├── ackrep_data_for_unittests/        ← expected to be a clone/copy of ackrep_data
-    │  ├── .git/                            (must be created manually)
-    │  └── ...
+    │   ├── .git/                            (must be created manually)
+    │   └── ...
     └── ackrep_core/                      ← separate repository for ackrep_core
-       ├── .git/
-       └── ...
+        ├── .git/
+        └── ...
 
 The components *ackrep_core* and *ackrep_data* are maintained in separate repositories.
 For the deployment to work it is expected to clone them separately one level up in the directory structure.

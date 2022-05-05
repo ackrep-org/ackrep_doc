@@ -1,4 +1,4 @@
+sphinx
 myst-parser
 sphinx_rtd_theme
-rst-to-myst[sphinx]
-mdit-py-plugins==3.0
+# rst-to-myst[sphinx]

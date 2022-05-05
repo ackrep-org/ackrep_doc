@@ -7,16 +7,16 @@ When making changes to the core framework, unittests are employed to endure the 
     <ackrep_project_dir>/
     │
     ├── ackrep_data/                   ← separate repository for ackrep_data
-    │  ├── .git/
-    │  └── ...
+    │   ├── .git/
+    │   └── ...
     │
     ├── ackrep_core/                   ← separate repository for ackrep_core
     |   ├── .git/
     |   └── ...
     |
     └── ackrep_data_for_unittests/     ← expected to be a clone/copy of ackrep_data
-      ├── .git/                         (must be created and renamed manually)
-      └── ...
+        ├── .git/                         (must be created and renamed manually)
+        └── ...
 
 ## Unittests
 

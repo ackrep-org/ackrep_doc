@@ -78,8 +78,26 @@ When running the unittests for ackrep_web, the `TestUI` tests are usually skippe
 - add the directory of the chrome driver executable to your PATH
 
 ## Running local server
+### Linux
 When developing the frontend, a local server can be run to look at the result.
 
+1. `sudo apt-get install rabbitmq-server`
+2. `docker run -d -p 5672:5672 rabbitmq`
+1. `pip install -r requirements_celery.txt`
+1. Change to working directory to `ackre_core`.
+2. Run `python -c "from ackrep_core import core; core.load_repo_to_db('../ackrep_data')"`
+3. Run `python manage.py runserver`
+4. Open a new shell and navigate to `ackrep_core`
+5. Run `celery -A ackrep_web worker --loglevel=INFO -c 4` to start concurrent workers
+
+**Test:**
+- visit <http://localhost:8000/> with your browser and check if the ackrep landing page is shown
+- visit <http://localhost:8000/entities>, search for key (UKJZI), click on "check this solution"; this should load some curves after about 3s.
+
+### Windows
+When developing the frontend, a local server can be run to look at the result.
+
+1. checkout a windows compatible branch of core, e.g `feature_CI`
 1. Change to working directory to `ackre_core`.
 2. Run `python -c "from ackrep_core import core; core.load_repo_to_db('../ackrep_data')"`
 3. Run `python manage.py runserver`

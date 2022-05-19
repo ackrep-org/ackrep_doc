@@ -38,19 +38,74 @@ Please also refer to our [contributing constitution](ref_constitution)
             - Bad return-value of `evaluate_solution`
 
 ## Adding System Models
-TODO
-- neue System-Modell-Daten kommen aus [Rockstrohrepo](https://github.com/JRockstroh/Catalog-of-dynamical-and-control-system-models) im folgenden als `R\` bezeichnet. Ort der neuen System Modelle: `ackrep_data\system_models\<model_name>\`
-1. Kopiere `_template`-Ornder. Ordner geeignet umbenennen (something_system?).
-2. Neuen Key mit `ackrep --key` erzeugen und in metadata.yml eintragen, descriptions in .yml anpassen
-3. `system_model.py` anpassen: `class Model(GenericModel)` aus `R\implementations\<model>\..._class.py` kopieren (siehe Kommentare im template)
-        in `__init__` die Fehlerexception abändern:
+directory for a new system model: `ackrep_data\system_models\<model_name>\`
+1. Copy the `_template`-folder. Rename it in the following way: `<model_name>_system`
+2. Generate a new key with `ackrep --key` 
+3. Edit `metadata.yml`
+    - insert the generated key
+    - add a name, short description and suitable tags
+    - fill in your full name and email in the creator space
+        ``` 
+         creator: 'Max Mustermann <max.mustermann{ät}gmail.com>'
+        ```
+    - add the creation date like `2022-04-21`
+    - insert the estimated runtime such as `10s`
+4. Edit `system_model.py`
+    - adjust `def initialize(self)`
+        - define the number of inputs `self.u_dim`
+        - define the system dimension `self.sys_dim`
+        - in case your model is an n extendable system:
+            - remove `self.sys_dim`, you don't have to define it
+            - define `self.default_param_sys_dim` for the simulation, this dimension should suit the dimension of the example in your parameter file
+    - adjust `def uu_default_function(self)`
+        - in case your model doesn't need any input function, you can delete this whole function. Otherwise:
+        - create symbolic input functions
+        - transform symbolic to numeric function via `st.expr_to_func()`
+        - adjust `def uu_rhs(t. xx_nv)`
+            - create the numerical values 
+            - return inputs within a list
+    - adjust `def get_rhs_symbolic(self)`
+        - get the symbolic state components, parameters and inputs
+        - define the symbolic functions
+        - return the functions within a list
+5. Edit `parameters.py`
+    - in case your model doesn't need any parameters, just leave a comment like `#This model does not need any parameters.` and delte everything else. Otherwise:
+    - create the symbolic parameters such as 
+        ```
+        pp_symb = [l, g, a, omega, gamma] = sp.symbols('l, g, a, omega, gamma', real=True)
+        ```
+    - you can define auxiliary symbolic parameters, which should not be numerical represented in the parameter table
+    - define symbolic parameter functions and add them to the list `pp_sf`
+    - fill in the list for substitution, if you don't need it leave the list empty. **Don't** delete it.
+    - define the LaTeX table
+        - the table always contains the two columns `Symbols` and `Variables`. You can add other columns before and afte these, for example `Parameter Name` or `Unit` 
+        - define for each new column the entries in a list
+        - when it is about a column before the fixed ones, add it to the list `start_columns_list`, if not add it to `end_columns_list`
+        - for example:
+        ```
+        tabular_header = ["Parameter Name", "Symbol", "Value", "Unit"]
+
+        col_alignment = ["left", "center", "left", "center"]
+
+        col_1 = ["acceleration due to gravity", 
+                "distance of forces to mass center",
+                "mass",
+                "moment of inertia"
+                ] 
         
-        try:
-            params.get_default_parameters()
-        except AttributeError:
-            self.has_params = False 
-    - Sonderfall: keine Parameter benötigt: leere parameter Datei mit Kommentar versehen
-5. `parameters.py` anpassen: modell-abhängigen Teil aus `R\implementations\<model>\..._parameters.py` kopieren (siehe Kommentare im template)
+        start_columns_list = [col_1]
+
+        col_4 = [r"$\frac{\mathrm{m}}{\mathrm{s}^2}$", 
+                "m",
+                "kg",
+                r"$\mathrm{kg} \cdot \mathrm{m}^2$"
+                ]
+    
+        end_columns_list = [col_4]
+        ```
+        - the result in LaTeX:
+        ![Latex Table](latex_table.png)
+
 6. `simulation.py` anpassen: entsprechende Teile aus `R\implementations\<model>\..._test.py` an die markierten Stellen kopieren (siehe Kommentare im template).
     - Hier ist etwas **Anpassungsarbeit** notwendig!
     - `R\implementations\<model>\..._test.py` ausführen und finale Zustände notieren für `evaluate_simulation`

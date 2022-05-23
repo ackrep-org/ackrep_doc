@@ -39,6 +39,7 @@ Please also refer to our [contributing constitution](ref_constitution)
 
 ## Adding System Models
 directory for a new system model: `ackrep_data\system_models\<model_name>\`
+
 1. Copy the `_template`-folder. Rename it in the following way: `<model_name>_system`
 2. Generate a new key with `ackrep --key` 
 3. Edit `metadata.yml`
@@ -49,7 +50,7 @@ directory for a new system model: `ackrep_data\system_models\<model_name>\`
          creator: 'Max Mustermann <max.mustermann{ät}gmail.com>'
         ```
     - add the creation date like `2022-04-21`
-    - insert the estimated runtime such as `10s`
+    - insert the estimated runtime of the simulation such as `10s`
 4. Edit `system_model.py`
     - adjust `def initialize(self)`
         - define the number of inputs `self.u_dim`
@@ -69,7 +70,7 @@ directory for a new system model: `ackrep_data\system_models\<model_name>\`
         - define the symbolic functions
         - return the functions within a list
 5. Edit `parameters.py`
-    - in case your model doesn't need any parameters, just leave a comment like `#This model does not need any parameters.` and delte everything else. Otherwise:
+    - in case your model doesn't need any parameters, just leave a comment like `#This model does not need any parameters.` and delete everything else. Otherwise:
     - create the symbolic parameters such as 
         ```
         pp_symb = [l, g, a, omega, gamma] = sp.symbols('l, g, a, omega, gamma', real=True)
@@ -107,16 +108,27 @@ directory for a new system model: `ackrep_data\system_models\<model_name>\`
         ```{image} images/latex_table.png
         :width: 500
         ```
-
-6. `simulation.py` anpassen: entsprechende Teile aus `R\implementations\<model>\..._test.py` an die markierten Stellen kopieren (siehe Kommentare im template).
-    - Hier ist etwas **Anpassungsarbeit** notwendig!
-    - `R\implementations\<model>\..._test.py` ausführen und finale Zustände notieren für `evaluate_simulation`
-7. aus `R\models\<model>\` beide `.tex`-Dateien und die `.pdf` nach `ackrep_data\system_models\<model>\_system_model_data\` kopieren
-    - `..._Documentation.tex` in `documentation.tex` umbenennen
-    - `..._Documentation.pdf` in `documentation.pdf` umbenennen 
-8. zum testen: 
-    - `ackrep -c <key>` = `ackrep --check <key>` führt umständlich `simulation.evaluate` aus
-    - test über webserver: 
-        - Bild
-        - Pdf
-        - Verlinkung
+6. Edit `simulation.py`
+    - adjust `def simulate()`
+        - define initial state values `xx0`, simulation time `tend` and vector of times for simulation `tt`
+        - define inputfunction `uu`
+    - adjust `def save_plot()`
+        - plot here the relevant and representing data of your model
+    - adjust `def evaluate_simulation(simulation_data)`
+        - fill in the `expected_final_states` of your model to check whether everything is working out
+7. Got to `_system_model_data`
+    - adjust `documentation.tex`
+        - update the headline with your system model name
+        - explain parameters, inputs and state components in the subsection `Nomenclature for Model Equations` 
+        - define state vectors, input vectors and system equations
+        - list parameters and outputs, if they don't exist just fill in `<not defined>`
+        - note the assumptions made
+        - describe  the `Derivation and Explanation` 
+        - add your references 
+8. Update the `parameters.tex` via `ackrep --update-parameter-tex <key>` 
+9. Create the `documentation.pdf` via `ackrep --create-pdf <key>`
+10. Test your model:
+    - `ackrep -csm <key>` = `ackrep --check-system-model <key>` 
+    - or via webserver:
+        - `ackrep -l ../ackrep_data`
+        - `python manage.py runserver`

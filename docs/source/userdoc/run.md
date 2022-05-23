@@ -1,5 +1,5 @@
 (run_local)=
-# Work locally
+# Reproduce Results
 
 In order to evaluate the database locally, the command line interface with the command `ackrep` is used.
 
@@ -11,11 +11,11 @@ A list of all commands is is shown when invoking `ackrep --help`.
     - Run `ackrep --load-repo-to-db .` in that directory.
 
 2. Now a specific problem solution can be tested: 
-    - Either with by specifying the path `ackrep --check-solution problem_solutions/<your_problem_solution>/metadata.yml`
-    - or by passing the key `ackrep -cs <key>`.
+    - Either with by specifying the path `ackrep --check problem_solutions/<your_problem_solution>/metadata.yml`
+    - or by passing the key `ackrep -c <key>`.
 3. Analogous to checking problem solution, system models can be simulated:
-    - Either with `ackrep --check-system-model system_models/<your_system_model>/metadata.yml`
-    - or with `ackrep -csm <key>`.
+    - Either with `ackrep --check system_models/<your_system_model>/metadata.yml`
+    - or with `ackrep -c <key>`.
 
 4. If an error occurs:
     - Manually run `python execscript.py` and see the error messages.

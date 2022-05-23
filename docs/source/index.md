@@ -49,6 +49,7 @@ userdoc/web
 userdoc/installation
 userdoc/run
 userdoc/data_structure
+userdoc/accessing_docker_images
 userdoc/troubleshooting
 ```
 

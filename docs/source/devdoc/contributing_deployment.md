@@ -78,8 +78,9 @@ For the deployment to work it is expected to clone them separately one level up 
 - install docker-compose (e.g. via `pip install docker-compose`)
 - create a directory structure like above
 - `cd ackrep_deployment`
-- build the main container: `docker-compose up -d --remove-orphans --build ackrep-django`
-- run the main container: `docker-compose up ackrep-django`
+- build the all the containers: `docker-compose build`
+- **deprecated:** run the main container (other containers are started due to dependancies): `docker-compose up celery_worker`
+- **new** run `python start_docker.py` to avoid permission issues
 - visit <http://localhost:8000/> with your browser and check if the ackrep landing page is shown
 
 

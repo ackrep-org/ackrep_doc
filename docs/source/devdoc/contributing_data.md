@@ -29,7 +29,7 @@ Please also refer to our [contributing constitution](ref_constitution)
 - Evaluate solution:
     - Change working directory to `ackrep_data`.
     - Run `ackrep --load-repo-to-db .` in that directory.
-    - Check a specific solution via `ackrep --check-solution problem_solutions/<your_problem_solution>/metadata.yml`.
+    - Check a specific solution via `ackrep --check problem_solutions/<your_problem_solution>/metadata.yml`.
     - If an error occurs:
         - Manually run `python execscript.py` and see the error messages.
         - Common issues:
@@ -104,7 +104,9 @@ directory for a new system model: `ackrep_data\system_models\<model_name>\`
         end_columns_list = [col_4]
         ```
         - the result in LaTeX:
-        ![Latex Table](latex_table.png)
+        ```{image} images/latex_table.png
+        :width: 500
+        ```
 
 6. `simulation.py` anpassen: entsprechende Teile aus `R\implementations\<model>\..._test.py` an die markierten Stellen kopieren (siehe Kommentare im template).
     - Hier ist etwas **Anpassungsarbeit** notwendig!
@@ -113,7 +115,7 @@ directory for a new system model: `ackrep_data\system_models\<model_name>\`
     - `..._Documentation.tex` in `documentation.tex` umbenennen
     - `..._Documentation.pdf` in `documentation.pdf` umbenennen 
 8. zum testen: 
-    - `ackrep -csm <key>` = `ackrep --check-system-model <key>` führt umständlich `simulation.evaluate` aus
+    - `ackrep -c <key>` = `ackrep --check <key>` führt umständlich `simulation.evaluate` aus
     - test über webserver: 
         - Bild
         - Pdf

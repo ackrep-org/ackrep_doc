@@ -118,11 +118,11 @@ directory for a new system model: `ackrep_data\system_models\<model_name>\`
         - update the headline with your system model name
         - explain parameters, inputs and state components in the subsection `Nomenclature for Model Equations` 
         - define state vectors, input vectors and system equations
-        - list parameters and outputs, if they don't exist just write `<not defined>`
-        - write down the assumptions made
+        - list parameters and outputs, if they don't exist just fill in `<not defined>`
+        - note the assumptions made
         - describe  the `Derivation and Explanation` 
         - add your references 
-8. Update your `parameters.tex` via `ackrep --update-parameter-tex <key>` 
+8. Update the `parameters.tex` via `ackrep --update-parameter-tex <key>` 
 9. Create the `documentation.pdf` via `ackrep --create-pdf <key>`
 10. Test your model:
     - `ackrep -csm <key>` = `ackrep --check-system-model <key>` 

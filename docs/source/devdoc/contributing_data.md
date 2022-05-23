@@ -39,6 +39,7 @@ Please also refer to our [contributing constitution](ref_constitution)
 
 ## Adding System Models
 directory for a new system model: `ackrep_data\system_models\<model_name>\`
+
 1. Copy the `_template`-folder. Rename it in the following way: `<model_name>_system`
 2. Generate a new key with `ackrep --key` 
 3. Edit `metadata.yml`
@@ -49,7 +50,7 @@ directory for a new system model: `ackrep_data\system_models\<model_name>\`
          creator: 'Max Mustermann <max.mustermann{ät}gmail.com>'
         ```
     - add the creation date like `2022-04-21`
-    - insert the estimated runtime such as `10s`
+    - insert the estimated runtime of the simulation such as `10s`
 4. Edit `system_model.py`
     - adjust `def initialize(self)`
         - define the number of inputs `self.u_dim`

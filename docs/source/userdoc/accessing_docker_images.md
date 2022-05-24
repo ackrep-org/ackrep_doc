@@ -13,9 +13,10 @@ The following content has only been tested on Linux OS!
 1. Verify your installation by running `docker run hello-world`.
 
 ## Using Ackrep Docker Images
-TODO
-<!-- The docker images are available for download here -->
-<!-- download image, -> put at right place, docker should see it -->
+The published docker images can be found at <https://github.com/orgs/ackrep-org/packages>.
+
+To access an environment image, pull it from github with
+`docker pull ghcr.io/ackrep-org/<environment_name>:latest`
 
 TODO: gid is not yet dynamic
 

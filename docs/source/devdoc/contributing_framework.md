@@ -81,8 +81,9 @@ When running the unittests for ackrep_web, the `TestUI` tests are usually skippe
 ### Linux
 When developing the frontend, a local server can be run to look at the result.
 
-1. `sudo apt-get install rabbitmq-server`
-2. `docker run -d -p 5672:5672 rabbitmq`
+1. setup the rabbit broker with
+  - `sudo apt-get install rabbitmq-server`
+  - or with `docker run -d -p 5672:5672 rabbitmq`
 1. `pip install -r requirements_celery.txt`
 1. Change to working directory to `ackre_core`.
 2. Run `python -c "from ackrep_core import core; core.load_repo_to_db('../ackrep_data')"`

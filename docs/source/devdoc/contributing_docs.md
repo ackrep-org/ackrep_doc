@@ -25,8 +25,17 @@ This documentation is built using [sphinx doc](https://www.sphinx-doc.org/en/mas
         │   └── ...
         |
         └── devdoc/                     ← content for developers
+            ├── images/
             ├── contributing_to_.._.md
             └── ...
+
+The documentation of this project can be divided into three main parts:
+
+First, introduction contains general information about the project, goals, use cases, links to publications and some theoretical background.
+
+Part two is the user doc, which is designed to guide users, that primarily want to use this project passively. E.g. by using the code in the repo to recreate results and use existing packages for own projects. This includes users who only use the web interface, users who install and run the repo locally as well as user who want to run simulations inside docker containers.
+
+Lastly, the developer documentation. This part is interesting for people who want to contribute to the project by adding solutions, models and methods. Additionally, here information about design considerations is stored.
 
 ## Usage
 Building the documentation:

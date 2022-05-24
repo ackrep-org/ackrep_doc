@@ -46,6 +46,16 @@ Which information is show in the different cases of settings, error type and exe
     - loading test db is done by running test setup methode in dockerfile
     to distinguish between ut and nominal use case, environment variables are passed with the docker command to the container, specificly tailored to work inside the container
 
+## CI
+Continuous Integration for core works fine.
+
+CI for ut_web is problematic, since celery + broker and docker have to be run inside the ci-container. Docker can be run by adding the step:
+    
+    - setup_remote_docker:
+          version: 20.10.14
+          docker_layer_caching: true
+
+The broker can be run via docker (`docker run -d -p 5672:5672 rabbitmq` or `docker run -p 6379:6379 --name redis redis:6.2-alpine`), but celery does not connect to the broker. This is presumably due to the fact, that docker commands are run in separate container.
 ---
 
 ## Deployment

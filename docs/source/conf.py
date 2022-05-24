@@ -70,3 +70,9 @@ html_theme_options = {
 html_static_path = ["_static"]
 
 primary_domain = "py"
+
+
+source_suffix = ['.rst', '.md']
+source_parsers = {'.md': 'recommonmark.parser.CommonMarkParser'}
+
+# master_doc = 'index'

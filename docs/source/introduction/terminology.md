@@ -1,4 +1,4 @@
-(terminology)=
+(sec_terminology)=
 # Terminology 
 
 ## Entity Key
@@ -6,4 +6,4 @@ To each entity there is an associated entity-key (matching regex: `[A-Z0-9]{5}`)
 
 ---
 
-Read about [entity types](entity_types).
+Read about [entity types](sec_entity_types).

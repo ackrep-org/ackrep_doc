@@ -1,4 +1,4 @@
-(overview)=
+(sec_overview)=
 # Overview
 
 The two main parts of this project are:
@@ -10,6 +10,6 @@ The two main parts of this project are:
 TODO
 
 ---
-Read about [entity types](entity_types).
+Read about [entity types](sec_entity_types).
 
-Read about the [terminology](terminology) used in this project.
+Read about the [terminology](sec_terminology) used in this project.

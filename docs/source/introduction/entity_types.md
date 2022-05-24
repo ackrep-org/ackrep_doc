@@ -1,4 +1,4 @@
-(entity_types)=
+(sec_entity_types)=
 # Entity Types
 
 
@@ -34,4 +34,4 @@ Alltogether there are the following entities:
 engineering to research in automatic control.
 
 ---
-Read about the [terminology](terminology) used in this project.
+Read about the [terminology](sec_terminology) used in this project.

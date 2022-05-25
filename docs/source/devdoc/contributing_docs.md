@@ -52,3 +52,9 @@ The Sphinx documentation primarily uses restructured text (rst). Therefore most 
 ## Usefull Links
 - Interactive table generator: <https://www.tablesgenerator.com/markdown_tables#>
 - Adding Images <https://sublime-and-sphinx-guide.readthedocs.io/en/latest/images.html>, then use `rst2myst`
+
+## Deploying Docs Online:
+Following the [tutorial](https://docs.readthedocs.io/en/stable/tutorial/index.html#getting-started) is a good start but leaves some questions unanswered. Its also necessary to create a [.readthedocs.yml](https://docs.readthedocs.io/en/stable/config-file/index.html) and specify the location of `conf.py` and the path to the `requirements.txt`. Additionally, `source_suffix` and `source_parser` have to be specified to include markdown files. **This problem only arises when deploying online, local building will work without these settings!** 
+
+Setting `fail_on_warning: true` will prevent builds prom passing that definately should not pass. 
+

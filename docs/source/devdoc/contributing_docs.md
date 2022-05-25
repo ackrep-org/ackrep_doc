@@ -1,6 +1,12 @@
 # Contributing to Documentation 
 This documentation is built using [sphinx doc](https://www.sphinx-doc.org/en/master/index.html) and [markdown](https://www.markdownguide.org/basic-syntax/) files. 
 
+```{contents} Table of contents
+:backlinks: none
+:depth: 3
+:local: true
+```
+
 ## Installation
 - Clone the repository <https://github.com/ackrep-org/ackrep_doc.git>
 - `pip install rst-to-myst[sphinx]`

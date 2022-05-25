@@ -4,6 +4,12 @@ Preliminary Guide for Contributing to the Data Repo.
 
 Please also refer to our [contributing constitution](ref_constitution)
 
+```{contents} Table of contents
+:backlinks: none
+:depth: 3
+:local: true
+```
+
 ## Adding Problem-Methode-Solution tuples
 
 - Preparation:

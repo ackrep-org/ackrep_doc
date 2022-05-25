@@ -1,9 +1,15 @@
 (run_local)=
-# Reproduce Results
+# Reproducing Results
+
+```{contents} Table of contents
+:backlinks: none
+:depth: 3
+:local: true
+```
 
 In order to evaluate the database locally, the command line interface with the command `ackrep` is used.
 
-A list of all commands is is shown when invoking `ackrep --help`.
+A list of all commands is provided at the [API page](ref_api) and is also shown when invoking `ackrep --help`.
 ## Run existing Code
 
 1. The first step after is to lead the database:

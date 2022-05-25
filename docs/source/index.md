@@ -34,17 +34,21 @@ Information regarding an overview of the project and some important terms and co
 ```{toctree}
 :caption: Introductory Information
 :maxdepth: 1
+:hidden:
 introduction/overview
 introduction/entity_types
 introduction/terminology
 ```
-
+- [Overview](introduction/overview)
+- [Entity Types](introduction/entity_types)
+- [Terminology](introduction/terminology)
 
 ## User Documentation
 Information regarding the local setup and passive usage of ACKREP.
 ```{toctree}
 :maxdepth: 1
 :caption: User Documentation
+:hidden:
 userdoc/web
 userdoc/installation
 userdoc/run
@@ -52,17 +56,41 @@ userdoc/data_structure
 userdoc/accessing_docker_images
 userdoc/troubleshooting
 ```
+- [Web Interface](userdoc/web)
+- [Installation](userdoc/installation)
+- [Reproducing Results](userdoc/run)
+- [Structure of the Data Repository](userdoc/data_structure)
+- [Accessing Docker Images](userdoc/accessing_docker_images)
+- [Troubleshooting](userdoc/troubleshooting)
+
 
 ## Developer Documentation
 Information regarding actively contributing to ACKREP on different levels.
 ```{toctree}
 :maxdepth: 1
 :caption: Developer Documentation
+:hidden:
 devdoc/constitution
 devdoc/contributing_data
 devdoc/contributing_framework
 devdoc/contributing_deployment
 devdoc/design_considerations
-devdoc/troubleshooting
 devdoc/contributing_docs
+devdoc/troubleshooting
 ```
+- [ACKREP Constitution](devdoc/constitution)
+- [Contributing to the Data Repo](devdoc/contributing_data)
+- [Contributing to Core Framework](devdoc/contributing_framework)
+- [Deployment Documentation](devdoc/contributing_deployment)
+- [Design Considerations](devdoc/design_considerations)
+- [Contributing to Documentation](devdoc/contributing_docs)
+- [Troubleshooting](devdoc/troubleshooting)
+
+## API
+```{toctree}
+:maxdepth: 1
+:caption: API
+:hidden:
+api
+```
+[API](api)

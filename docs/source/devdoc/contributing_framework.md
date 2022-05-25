@@ -1,5 +1,12 @@
 (contributing_core)=
 # Contributing to Core Framework
+
+```{contents} Table of contents
+:backlinks: none
+:depth: 3
+:local: true
+```
+
 ## Project Structure
 When making changes to the core framework, unittests are employed to endure the integrity of the framwork. The goal is not to test the data of the database (implemented solutions etc.), but rather to ensure that the framework handles the data correctly (e.g. the check function is working correctly). Therefore we use a clone of the data repository `ackrep_for_unittests` for validation. This repository is expected to be located in the project directory and needs to have the **`for_unittests`-branch** checked out. The project structure should looke like this:
 (contr_core_structure)=
@@ -18,6 +25,7 @@ When making changes to the core framework, unittests are employed to endure the 
         ├── .git/                         (must be created and renamed manually)
         └── ...
 
+(ref_unittests)=
 ## Unittests
 
 As the software is still an early prototype and defining the concrete feature set is subject to ongoing research, only a fraction of the functionality is already covered by tests. However this fraction will increase in the future. The unittest depend on data which is maintained outside of this repo: It is assumed that there is a copy of the `acrep_data` repository named `acrep_data_for_unittests` next to it (see [directory layout](contr_core_structure)) and that its HEAD points to a defined commit in the `for_unittests`-branch (see `ackrep_core.core.test.test_core.default_repo_head_hash`).

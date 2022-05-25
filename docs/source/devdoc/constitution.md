@@ -1,6 +1,12 @@
 (ref_constitution)=
 # ACKREP Constitution
 
+```{contents} Table of contents
+:backlinks: none
+:depth: 3
+:local: true
+```
+
 ## Preamble
 
 This document describes how individuals interact in the scope of the project "Automatic Control Knowledge Repository" (ACKREP). This project only makes sense if people are willing to contribute their work. Therefore a focus on equal participation and maintaining a constructive and welcoming atmosphere is central. The main purpose of this constitution is to ensure that the project is driven by equal peers and not harmfully dominated by an individual or a small group.

@@ -1,5 +1,11 @@
 # Design Considerations
 
+```{contents} Table of contents
+:backlinks: none
+:depth: 3
+:local: true
+```
+
 ## Data
 todo
 ---

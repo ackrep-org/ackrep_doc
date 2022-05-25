@@ -3,6 +3,12 @@
 # Structure of the Data Repository
 Every entity consists of a subdirectory with a special structure.
 
+```{contents} Table of contents
+:backlinks: none
+:depth: 3
+:local: true
+```
+
 ## Metadata
 All entities have a file `metadata.yml` which contains both generic data (applicable to all entity types) and type specific
 data. Data format is [YAML](https://en.wikipedia.org/wiki/YAML) (human-readable data-serialization language).

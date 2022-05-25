@@ -1,5 +1,12 @@
 (installation)=
 # Installation
+
+```{contents} Table of contents
+:backlinks: none
+:depth: 3
+:local: true
+```
+
 ## Without Docker
 
 ### Basic Setup:

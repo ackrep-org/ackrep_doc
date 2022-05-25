@@ -1,6 +1,12 @@
 (contributing_deployment)=
 # Deployment Documentation
 
+```{contents} Table of contents
+:backlinks: none
+:depth: 3
+:local: true
+```
+
 ## General Information
 
 This repository contains the code that runs on <demo.ackrep.org>. It should also provide a starting point to deploy an own instance.

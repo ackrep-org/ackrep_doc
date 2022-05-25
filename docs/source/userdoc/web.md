@@ -5,6 +5,12 @@
 
 The [Web Interface][server_url] contains the follwoing features:
 
+```{contents} Table of contents
+:backlinks: none
+:depth: 3
+:local: true
+```
+
 ## List all entities in database 
 
 

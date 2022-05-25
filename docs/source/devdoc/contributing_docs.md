@@ -55,6 +55,43 @@ The Sphinx documentation primarily uses restructured text (rst). Therefore most 
 
 `rst2myst convert <path/file_name>.rst`
 
+This apparantly is not foolproof and sometimes generates an output, that cant be properly parsed by markdown. 
+
+Example:
+- Origonal .rst syntax:
+
+    ```
+    .. note::
+        This is a note.
+    ```
+
+- ``rst2myst`` output:
+
+    ```
+    :::{note}
+    This is a note.
+    :::
+    ```
+
+- which looks like this:
+
+    :::{note}
+    This is a note.
+    :::
+
+- and not like this:
+
+    ````{note}
+    This is a note.
+    ````
+- The solution is 
+
+    ````
+    ```{note}
+    This is a note.
+    ```
+    ````
+
 ## Usefull Links
 - Interactive table generator: <https://www.tablesgenerator.com/markdown_tables#>
 - Adding Images <https://sublime-and-sphinx-guide.readthedocs.io/en/latest/images.html>, then use `rst2myst`
@@ -64,3 +101,8 @@ Following the [tutorial](https://docs.readthedocs.io/en/stable/tutorial/index.ht
 
 Setting `fail_on_warning: true` will prevent builds prom passing that definately should not pass. 
 
+The settings of <https://readthedocs.org/> have been configured to automatically build the current version on push to the **development** branch.
+
+````{note}
+Even when the build passes, it may take some time before the new version is displayed.
+````

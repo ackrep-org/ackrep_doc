@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="272.28418mm"
+   height="285.52499mm"
+   viewBox="0 0 272.28418 285.52499"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="Fehlerpropagation.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.50898197"
+     inkscape:cx="445.00594"
+     inkscape:cy="559.94125"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5669" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5657" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-51"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-94" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-57" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-51-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-94-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-51-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-94-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-51-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-94-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-51-6-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-94-4-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-51-6-9-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-94-4-7-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-51-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-94-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-51-42"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-94-71" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-51-1"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-94-87" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-51-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-94-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-51-0-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-94-1-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-51-0-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5663-94-1-69" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(141.81327,63.911685)">
+    <g
+       id="g44215"
+       transform="translate(21.216009,68.112546)"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect31"
+         width="69.694664"
+         height="13.582748"
+         x="-75.769707"
+         y="-131.52423" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="-73.624542"
+         y="-121.51624"
+         id="text3159"><tspan
+           sodipodi:role="line"
+           id="tspan3157"
+           style="stroke-width:0.264583"
+           x="-73.624542"
+           y="-121.51624">ackrep_data</tspan></text>
+    </g>
+    <g
+       id="g44210"
+       transform="translate(-50.917345,108.30217)"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect31-1"
+         width="57.902451"
+         height="13.668396"
+         x="2.2597539"
+         y="-137.74339" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="4.2888088"
+         y="-127.59206"
+         id="text11575"><tspan
+           sodipodi:role="line"
+           id="tspan11573"
+           style="stroke-width:0.264583"
+           x="4.2888088"
+           y="-127.59206">execscript</tspan></text>
+    </g>
+    <g
+       id="g44205"
+       transform="translate(-119.27824,151.38246)"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect31-6"
+         width="42.612839"
+         height="13.794736"
+         x="78.26545"
+         y="-136.29024" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="80.057755"
+         y="-126.51985"
+         id="text13911"><tspan
+           sodipodi:role="line"
+           id="tspan13909"
+           style="stroke-width:0.264583"
+           x="80.057755"
+           y="-126.51985">core.py</tspan></text>
+    </g>
+    <g
+       id="g44200"
+       transform="translate(-245.38083,236.35992)"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <g
+         id="g40131">
+        <rect
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect31-0"
+           width="25.851036"
+           height="13.965203"
+           x="150.45828"
+           y="-168.49471" />
+        <text
+           xml:space="preserve"
+           style="font-size:10.5833px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
+           x="151.89531"
+           y="-157.97112"
+           id="text21748"><tspan
+             sodipodi:role="line"
+             id="tspan21746"
+             style="stroke-width:0.264583"
+             x="151.89531"
+             y="-157.97112">cmd</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g44178"
+       transform="translate(-173.93002,194.70411)"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <g
+         id="g40131-5"
+         transform="translate(48.648677,76.598024)">
+        <rect
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect31-0-5"
+           width="25.851036"
+           height="13.965203"
+           x="150.45828"
+           y="-168.49471" />
+        <text
+           xml:space="preserve"
+           style="font-size:10.5833px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
+           x="151.89531"
+           y="-157.97112"
+           id="text21748-6"><tspan
+             sodipodi:role="line"
+             id="tspan21746-7"
+             style="stroke-width:0.264583"
+             x="151.89531"
+             y="-157.97112">cmd</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g45121"
+       transform="translate(-47.064333,148.70898)"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect31-0-5-9"
+         width="16.93829"
+         height="14.150393"
+         x="112.83669"
+         y="-45.994148" />
+      <text
+         xml:space="preserve"
+         style="font-size:10.5833px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
+         x="114.89547"
+         y="-34.848797"
+         id="text21748-6-5"><tspan
+           sodipodi:role="line"
+           id="tspan21746-7-5"
+           style="stroke-width:0.264583"
+           x="114.89547"
+           y="-34.848797">CI</tspan></text>
+    </g>
+    <g
+       id="g44183"
+       transform="translate(-236.55204,229.07409)"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect31-0-5-1"
+         width="20.646923"
+         height="14.068219"
+         x="206.88979"
+         y="-126.31817" />
+      <text
+         xml:space="preserve"
+         style="font-size:10.5833px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
+         x="208.88377"
+         y="-116.24851"
+         id="text21748-6-6"><tspan
+           sodipodi:role="line"
+           id="tspan21746-7-8"
+           style="stroke-width:0.264583"
+           x="208.88377"
+           y="-116.24851">gui</tspan></text>
+    </g>
+    <g
+       id="g44194"
+       transform="translate(-184.99706,200.70262)"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect31-7"
+         width="44.366287"
+         height="13.77914"
+         x="143.47513"
+         y="-132.74437" />
+      <text
+         xml:space="preserve"
+         style="font-size:10.5833px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
+         x="145.4621"
+         y="-122.23104"
+         id="text24920"><tspan
+           sodipodi:role="line"
+           id="tspan24918"
+           style="stroke-width:0.264583"
+           x="145.4621"
+           y="-122.23104">view.py</tspan></text>
+    </g>
+    <g
+       id="g44189"
+       transform="translate(-124.54309,162.03638)"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect31-0-5-1-4"
+         width="25.028446"
+         height="14.219983"
+         x="155.45178"
+         y="-94.298553" />
+      <text
+         xml:space="preserve"
+         style="font-size:10.5833px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
+         x="157.97113"
+         y="-83.274368"
+         id="text29346"><tspan
+           sodipodi:role="line"
+           id="tspan29344"
+           style="stroke-width:0.264583"
+           x="157.97113"
+           y="-83.274368">test</tspan><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.264583"
+           x="157.97113"
+           y="-70.045242"
+           id="tspan29348" /></text>
+    </g>
+    <g
+       id="g44167"
+       transform="translate(-304.59555,378.334)"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect31-0-5-1-8"
+         width="27.078146"
+         height="13.92871"
+         x="239.68684"
+         y="-172.49626" />
+      <text
+         xml:space="preserve"
+         style="font-size:10.5833px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
+         x="241.60289"
+         y="-162.25992"
+         id="text36698"><tspan
+           sodipodi:role="line"
+           id="tspan36696"
+           style="stroke-width:0.264583"
+           x="241.60289"
+           y="-162.25992">user</tspan></text>
+    </g>
+    <g
+       id="g44172"
+       transform="translate(-199.89454,333.88013)"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect31-0-5-1-9"
+         width="21.634987"
+         height="14.045402"
+         x="240.89211"
+         y="-126.81222" />
+      <text
+         xml:space="preserve"
+         style="font-size:10.5833px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
+         x="241.9603"
+         y="-116.15523"
+         id="text37494"><tspan
+           sodipodi:role="line"
+           id="tspan37492"
+           style="stroke-width:0.264583"
+           x="241.9603"
+           y="-116.15523">dev</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="23.189644"
+       y="-53.068733"
+       id="text3566"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3564"
+         style="stroke-width:0.264583"
+         x="23.189644"
+         y="-53.068733">Error</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-11.798656"
+       y="-36.087151"
+       id="text3566-2"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3564-6"
+         style="stroke-width:0.264583"
+         x="-11.798656"
+         y="-36.087151">Error Message</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="m -18.713826,-49.025413 v 18.37871"
+       id="path4658"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-5)"
+       d="m -192.97649,-267.47668 v 18.37871"
+       id="path4658-1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-51)"
+       d="m -134.1646,-267.47668 v 18.37871"
+       id="path4658-9" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-51-0)"
+       d="m -19.081397,117.23553 v 18.37871"
+       id="path4658-9-1"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-51-0-2)"
+       d="m 37.89261,116.86796 v 18.37871"
+       id="path4658-9-1-9"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-51-0-9)"
+       d="m 73.914887,117.23553 v 18.37871"
+       id="path4658-9-1-6"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-51-1)"
+       d="M -82.304173,81.948401 V 100.32711"
+       id="path4658-9-33"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-51-2)"
+       d="M 40.04661,82.381892 V 100.7606"
+       id="path4658-9-81"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.00899;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-51-42)"
+       d="m 55.937139,81.95781 17.19673,18.88506"
+       id="path4658-9-37"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.787962;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-51-6-9)"
+       d="M -19.081403,28.941457 -69.459661,67.400145"
+       id="path4658-9-8-0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-51-6-9-2)"
+       d="M -19.081403,28.941457 30.908693,67.245429"
+       id="path4658-9-8-0-6"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-51-4)"
+       d="M -19.816556,82.683552 V 101.06226"
+       id="path4658-9-3"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-51-7)"
+       d="M -19.081403,28.941457 V 66.433963"
+       id="path4658-9-4"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-4)"
+       d="m -41.364111,22.642497 -60.320339,13.44897"
+       id="path4658-2"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-2)"
+       d="m -19.816549,-15.826353 v 29.00199"
+       id="path4658-0"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-6)"
+       d="m 101.08292,-273.72544 v 18.37871"
+       id="path4658-04" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-11.362341"
+       y="-2.3434823"
+       id="text9002"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan9000"
+         style="stroke-width:0.264583"
+         x="-11.362341"
+         y="-2.3434823">Completed Process</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-11.362341"
+         y="8.2398548"
+         id="tspan23816">(args, returncode, stdout, stderr)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-142.58635"
+       y="45.44117"
+       id="text13200"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-142.58635"
+         y="45.44117"
+         id="tspan36531">logging</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-48.487343"
+       y="64.228584"
+       id="text27464"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan27462"
+         style="stroke-width:0.264583"
+         x="-48.487343"
+         y="64.228584">stdout</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-32.281998"
+       y="146.00061"
+       id="text27464-7"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan27462-2"
+         style="stroke-width:0.264583"
+         x="-32.281998"
+         y="146.00061">stdout</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -96.883483,159.779 c -2.63558,24.67861 44.56522,16.53227 47.9196,36.41891 8.62552,-24.9182 52.471959,-10.06312 51.273971,-36.41891"
+       id="path28712"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 14.873773,160.08026 c -2.037232,19.07589 34.447714,12.779 37.040557,28.15083 6.667295,-19.26109 40.559404,-7.77852 39.633394,-28.15083"
+       id="path28712-6"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 150.31946,-444.98781 c -5.71811,53.54233 96.68809,35.86816 103.96569,79.01393 18.71383,-54.06216 113.84245,-21.8328 111.24331,-79.01393"
+       id="path28712-7"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -106.47582,-422.11535 c -5.71811,53.54233 96.68809,35.86816 103.96569,79.01393 18.71383,-54.06216 113.84245,-21.8328 111.24331,-79.01393"
+       id="path28712-1"
+       sodipodi:nodetypes="ccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-112.44527"
+       y="111.23696"
+       id="text33620"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan33618"
+         style="stroke-width:0.264583"
+         x="-112.44527"
+         y="111.23696">log messages</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="25.038185"
+       y="144.45517"
+       id="text33620-3"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\error_propagation.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan33618-6"
+         style="stroke-width:0.264583"
+         x="25.038185"
+         y="144.45517">log messages</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="183.49945"
+       y="-174.14255"
+       id="text39745"><tspan
+         sodipodi:role="line"
+         id="tspan39743"
+         style="stroke-width:0.264583"
+         x="183.49945"
+         y="-174.14255" /></text>
+  </g>
+</svg>

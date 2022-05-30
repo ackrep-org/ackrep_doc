@@ -1,1 +1,0 @@
-# ackrep_doc

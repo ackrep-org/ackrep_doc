@@ -75,6 +75,8 @@ Usual test execution with  `python -m unittest <path>` will not work because dja
 
 At the current stage frontend testing does not happen. However the backend introduces some *unit_tests_comments* (`utc_...`) to the served html sources, such that the tests cases can roughly check if the expected content is shown.
 
+For more details, refer to the implementation of [core tests](https://github.com/ackrep-org/ackrep_core/blob/main/ackrep_core/test/test_core.py) and [web tests](https://github.com/ackrep-org/ackrep_core/blob/main/ackrep_web/test/test_web.py)
+
 ### Test Web
 When running the unittests for ackrep_web, the `TestUI` tests are usually skipped. If you want to run those tests as well you need to:
 - install splinter and selenium
@@ -85,9 +87,10 @@ When running the unittests for ackrep_web, the `TestUI` tests are usually skippe
 - download [chromedriver](https://chromedriver.chromium.org/home)
 - add the directory of the chrome driver executable to your PATH
 
+(ref_running_local_server)=
 ## Running local server
 ### Linux
-When developing the frontend, a local server can be run to look at the result.
+When developing the frontend, a local server can be run to visualize the result.
 
 1. setup the rabbit broker with
   - `sudo apt-get install rabbitmq-server`
@@ -104,7 +107,7 @@ When developing the frontend, a local server can be run to look at the result.
 - visit <http://localhost:8000/entities>, search for key (UKJZI), click on "check this solution"; this should load some curves after about 3s.
 
 ### Windows
-When developing the frontend, a local server can be run to look at the result.
+When developing the frontend, a local server can be run to visualize the result.
 
 1. checkout a windows compatible branch of core, e.g `feature_CI`
 1. Change to working directory to `ackre_core`.

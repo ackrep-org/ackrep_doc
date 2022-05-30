@@ -26,6 +26,7 @@ This research is carried out at the Institute of Control Theory, TU Dresden.
 - [Web Interface](https://testing.ackrep.org).
 - [Official website](https://ackrep.org/) of the project.
 - [Publication](https://ieeexplore.ieee.org/document/9259657) of the research.
+- [Source Code](https://github.com/ackrep-org), most importantly the [core repo](https://github.com/ackrep-org/ackrep_core) and the [data repo](https://github.com/ackrep-org/ackrep_data).
 
 ## General Concept of the Project (Working Title)
 

@@ -55,10 +55,10 @@ The Sphinx documentation primarily uses restructured text (rst). Therefore most 
 
 `rst2myst convert <path/file_name>.rst`
 
-This apparantly is not foolproof and sometimes generates an output, that cant be properly parsed by markdown. 
+Apparantly, this is not foolproof and sometimes generates an output, that can't be properly parsed by markdown. 
 
 Example:
-- Origonal .rst syntax:
+- Original .rst syntax:
 
     ```
     .. note::

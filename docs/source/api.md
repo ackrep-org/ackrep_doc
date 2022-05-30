@@ -1,6 +1,6 @@
 (ref_api)=
 # API
-Summary of ACKREP - commands.
+Summary of ACKREP - commands. For more details, refer to `script.py` in the [source code](https://github.com/ackrep-org/ackrep_core/blob/main/ackrep_core/script.py)
 
 ```{contents} Table of contents
 :backlinks: none
@@ -102,12 +102,16 @@ Render the execscript corresponding to problem solution or system model and plac
 
     --prepare-script        <key>
 
+### Developer Commands
+Additional commands for developers / for debugging can be found in the [source code](https://github.com/ackrep-org/ackrep_core/blob/main/ackrep_core/script.py).
+
+
 ## Additional Commands
 (ref_additional_run_web)=
 ### Running local Web Interface
-Also refer to [ackrep commands](ref_ackrep_run_web).
+Also refer to [ackrep commands](ref_ackrep_run_web) and [Running local server](ref_running_local_server).
 #### Run Server
-Run the server at <http://127.0.0.1:8000/>. This command presumes that the current working directory is `ackrep_core`, that the database is loaded and that the celery workers are up and running.
+Run the server at <http://localhost:8000/>. This command presumes that the current working directory is `ackrep_core`, that the database is loaded and that the celery workers are up and running.
 
     python manage.py runserver
 
@@ -115,12 +119,14 @@ Run the server at <http://127.0.0.1:8000/>. This command presumes that the curre
 Also refer to the [unittest documentation](ref_unittests)
 
 #### Test Core
+Working directory is presumed to be `ackrep_core`. Test the whole framework, a single test case or just a single test.
 
     python manage.py test --keepdb --nocapture ackrep_core.test.test_core
     python manage.py test --keepdb --nocapture ackrep_core.test.test_core:TestCases2
     python manage.py test --keepdb --nocapture ackrep_core.test.test_core:TestCases3.test_check_system_model
 
 #### Test Web
+Working directory is presumed to be `ackrep_core`. Test the whole framework, a single test case or just a single test.
 
     python manage.py test --keepdb --nocapture ackrep_web.test.test_web
     python manage.py test --keepdb --nocapture ackrep_web.test.test_web:TestCases1

@@ -1,6 +1,6 @@
 (ref_api)=
 # API
-Summary of ACKREP - commands. For more details, refer to `script.py` in the [source code](https://github.com/ackrep-org/ackrep_core/blob/main/ackrep_core/script.py)
+Summary of ACKREP - commands. For more details, refer to `script.py` in the [source code](https://github.com/ackrep-org/ackrep_core/blob/main/ackrep_core/script.py).
 
 ```{contents} Table of contents
 :backlinks: none
@@ -81,7 +81,7 @@ Load repo to database.
 
     -l, --load-repo-to-db       <path>
 
-E.g. cwd is `ackrep_core`: `ackrep -l ../ackrep_data`
+E.g. in `ackrep_core` directory, run: `ackrep -l ../ackrep_data`
 
 ### Running local Web Interface
 Also refer to [additional commands](ref_additional_run_web).
@@ -116,7 +116,7 @@ Run the server at <http://localhost:8000/>. This command presumes that the curre
     python manage.py runserver
 
 ### Run Tests
-Also refer to the [unittest documentation](ref_unittests)
+Also refer to the [unittest documentation](ref_unittests).
 
 #### Test Core
 Working directory is presumed to be `ackrep_core`. Test the whole framework, a single test case or just a single test.

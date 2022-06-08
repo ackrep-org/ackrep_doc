@@ -56,12 +56,40 @@ Which information is show in the different cases of settings, error type and exe
 Continuous Integration for core works fine.
 
 CI for ut_web is problematic, since celery + broker and docker have to be run inside the ci-container. Docker can be run by adding the step:
-    
-    - setup_remote_docker:
-          version: 20.10.14
-          docker_layer_caching: true
 
-The broker can be run via docker (`docker run -d -p 5672:5672 rabbitmq` or `docker run -p 6379:6379 --name redis redis:6.2-alpine`), but celery does not connect to the broker. This is presumably due to the fact, that docker commands are run in separate container.
+    - setup_remote_docker:
+        version: 20.10.14
+        docker_layer_caching: true
+
+
+- **Solution**: run rabbit image parallel to main job and let celery connect via localhost
+    ```
+    jobs: # A basic unit of work in a run
+    setup: 
+        # directory where steps are run
+        working_directory: ~/ackrep_core
+        docker: # run the steps with Docker
+        # CircleCI Python images available at: https://hub.docker.com/r/circleci/python/
+        - image: cimg/python:3.8
+            environment: # environment variables for primary container
+            SKIP_TEST_CREATE_PDF: "True"
+            CI: "True"
+        - image: rabbitmq:3.8.16-management-alpine
+        steps: # steps that comprise the `build` job
+        - checkout
+        ...
+    ```
+    ```
+    broker_url = "pyamqp://guest@localhost//"
+    result_backend = "rpc://"
+    ```
+
+- volume mounting does not exist inside celery (see <https://circleci.com/docs/2.0/building-docker-images/#mounting-folders>). The used workaround is to create a dummy container with a dummy volume (**without** mapping to host!), copy all files into the dummy container (at the volume location) and the start the main container with `--volumes-from dummy`.
+
+- The image url part of the tests is skipped when in the CI since the file would have to be copied back to the primary container during the test.
+
+- some permissions have to be changed, in order to allow the container to modify the copied files
+
 
 ---
 
@@ -72,6 +100,32 @@ The broker can be run via docker (`docker run -d -p 5672:5672 rabbitmq` or `dock
 :width: 500
 ```
 The ackrep-django container runs the web interface. The celery_worker container runs in the background. If the "check_solution" button is pressed, the check_view in views.py is called and an asynchronous task is started via the .delay call. This enables the ackrep-django container to continue without having to wait for the calculation result. The celery_worker however determines the correct environment for the current simulation and starts a new docker container with the desired spectification to run the simulation inside. This is achieved by exposing the docker socket of the host to the celery_worker container (including the corresponding permissions) to ensure the new container is a sibling rather a container inside a container. The environment container is configured to execute cli commands passed on startup. In this case, this is the corresponding ackrep-command. The propagation of the the results from env to celery module. The result of the asynchronous task is stored and collected once the page in question is reloaded, and then forgotten.
+
+**data repo**
+
+The ackrep_data repository is not part of the docker images. Rather it is mounted to each container on their respective startup. Naturally, after mounting the volume the database has to be loaded in each container, which is done by an entrypoint script. 
+The volume mapping is specified in the `docker-compose.yml` file, which in turn is called by the `start_docker.py` script. Mountaing a volume to containers is easily done for the `ackrep-django` and `celery_worker` container but is problematic for the `environment` containers. Although these are started from inside the `celery_worker` container (reminder that this creates siblings, and not docker in docker) the volume mapping still has to be `host/.../ackrep_data:code/ackrep_data`. This means the ``celery_worker`` container has to have some information abour its context. This is done by passing the `DATA_REPO_HOST_ADDRESS` env variable from the starter script first to the ``celery_worker`` container and then to the env container with the correct volume mapping. In case of local running without ``ackrep-django`` container, this env variable is created by the celery process which runs directly on host and thus knows the data repo location. In the unit test case, instead of `ackrep_data`, `ackrep_data_for_unittests` is mounted and the corresponding environment variables are passed.
+
+Since the data is only ever added on container startup, the databases are loaded by the entrypoint script of each container. In the case of the environment containers, the correct environment variable has to be passed for the database loading to happen. An exemplary docker command issued by the celery process (`core.py/check`) could look like this: <br>
+normal case:
+
+    docker-compose --file ../ackrep_deployment/docker-compose.yml run --rm 
+    -e ACKREP_DATABASE_PATH=/code/ackrep_core/db_for_unittests.sqlite3 
+    -e ACKREP_DATA_PATH=/code/ackrep_data_for_unittests 
+    -v /home/Documents/ackrep/ackrep_data:/code/ackrep_data 
+    default_environment 
+    ackrep -c UXMFA
+
+unittest case:
+
+    docker run --rm 
+    -e ACKREP_DATABASE_PATH=/code/ackrep_core/db_for_unittests.sqlite3 
+    -e ACKREP_DATA_PATH=/code/ackrep_data_for_unittests 
+    --volumes-from dummy 
+    ghcr.io/ackrep-org/default_environment 
+    ackrep -c LRHZX
+
+The `start_docker.py` script also changes some permissions (docker.sock, ackrep_data, ackrep_data_for_unittests) so every container can access the files correctly. Maybe a password prompt is encountered.
 
 ### Celery 
 #### configuration

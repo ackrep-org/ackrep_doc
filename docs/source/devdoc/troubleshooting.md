@@ -18,3 +18,7 @@
     - flower==1.0.0
     - redis==3.5.3
     - kombu==5.1.0
+
+- permission denied: <br>
+frequently, when accessing host files via a docker container, a permission denied error is thrown. To prevent this, change permission of files, to allow rw access by users of docker group (i.e. 999). Make sure to use the `--recursive` option. <br> Also, the `ackrep_deployment/start_docker.py` script should already change all necessary permissions.
+

@@ -95,21 +95,25 @@ When developing the frontend, a local server can be run to visualize the result.
 1. setup the rabbit broker with
   - `sudo apt-get install rabbitmq-server`
   - or with `docker run -d -p 5672:5672 rabbitmq`
+1. new: clone `ackrep_deployment` repo (see [structure](ackrep_complete_structure))
+1. new: [install docker](install_docker)
 1. `pip install -r requirements_celery.txt`
 1. Change to working directory to `ackre_core`.
 2. Run `python -c "from ackrep_core import core; core.load_repo_to_db('../ackrep_data')"`
 3. Run `python manage.py runserver`
-4. Open a new shell and navigate to `ackrep_core`
-5. Run `celery -A ackrep_web worker --loglevel=INFO -c 4` to start concurrent workers
+4. Open a new shell and run `ackrep --start-workers` to start concurrent workers
 
 **Test:**
 - visit <http://localhost:8000/> with your browser and check if the ackrep landing page is shown
 - visit <http://localhost:8000/entities>, search for key (UKJZI), click on "check this solution"; this should load some curves after about 3s.
 
 ### Windows
+```{note}
+Even though we try to not to implement os specific code, this becomes more difficult with rising complexity. Therefore, we focus on Linux development. There is no guarantee, that the described steps work under Windows. That beeing said, we encourage you to try it out.
+```
 When developing the frontend, a local server can be run to visualize the result.
 
-1. checkout a windows compatible branch of core, e.g `feature_CI`
+1. checkout a windows compatible branch of core, i.e. `feature_CI`
 1. Change to working directory to `ackre_core`.
 2. Run `python -c "from ackrep_core import core; core.load_repo_to_db('../ackrep_data')"`
 3. Run `python manage.py runserver`

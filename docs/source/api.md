@@ -33,10 +33,20 @@ Show location of the metadata file in your file system corresponding to the give
 
 
 ### Simulation/ Calculation
-#### Check Solution/ Simulation
-Check to validity of ProblemSpecification - ProblemSolution tuple or a SystemModel specified by the entity key or the path to the `metadata.yml` file. 
+#### Check Solution/ Simulation (depricated)
+```{note}
+Depricated. Use `--check-with-docker` instead. Use this only if you dont have docker installed. Results may vary.
+```
+Check to validity of ProblemSpecification - ProblemSolution tuple or a SystemModel specified by the entity key or the path to the `metadata.yml` file. Uses only locally installed packages.
 
     --check, -c     <key or file_path>
+
+Shows "Success" if valid, "Inaccurate" if the simulation finished but the results did not match the expectation (this happens sometimes with chaotic systems on different operating systems) or "Fail" if the simulation encountered an error. 
+
+#### Check Solution/ Simulation with Docker
+Check to validity of ProblemSpecification - ProblemSolution tuple or a SystemModel specified by the entity key or the path to the `metadata.yml` file. This uses the correct environment specification in `metadata.yml`.
+
+    --check-with-docker, -cwd     <key or file_path>
 
 Shows "Success" if valid, "Inaccurate" if the simulation finished but the results did not match the expectation (this happens sometimes with chaotic systems on different operating systems) or "Fail" if the simulation encountered an error. 
 
@@ -93,7 +103,7 @@ Start background celery process to pick up asynchronous tasks once they are star
 
 ### Interacting with Environment Images
 #### Create Interactive Session
-Start an interactive session with a docker container of an environment image of your choice. Environment key must be specified.
+Start an interactive session with a docker container of an environment image of your choice. Environment key must be specified. (e.g. default_env key: YJBOX)
 
     --run-interactive-environment       <key>
 

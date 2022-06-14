@@ -35,6 +35,7 @@ The ackrep project consists of several components which are maintained each in t
 
 <a name="directory-layout"></a>
 These components are represented by the following **directory layout**:
+(ackrep_complete_structure)=
 
     <ackrep_project_dir>/
     ├── ackrep_deployment/                ← repo with deployment code for the ackrep project
@@ -69,7 +70,7 @@ For the deployment to work it is expected to clone them separately one level up 
 
 
 ### Without Docker
-
+**depricated!**
 - clone *ackrep_core* and enter the repo directory
 - `pip install -r requirements.txt`
 - `python3 manage.py runserver`
@@ -80,6 +81,7 @@ For the deployment to work it is expected to clone them separately one level up 
 
 
 **steps for local testing deployment**
+(install_docker)=
 - install docker (e.g. via `apt install docker-ce docker-ce-cli docker-ce-rootless-extras`)
 - install docker-compose (e.g. via `pip install docker-compose`)
 - create a directory structure like above

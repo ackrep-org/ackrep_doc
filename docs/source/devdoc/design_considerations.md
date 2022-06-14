@@ -90,7 +90,9 @@ CI for ut_web is problematic, since celery + broker and docker have to be run in
 
 - some permissions have to be changed, in order to allow the container to modify the copied files
 
-
+**Debugging** <br>
+Frequent Problems:
+- permission denied for container when accessing data files. This might not be visible on first glance, so when a web test of TestCases2 fails, add `core.logger.critical(response.content.decode("utf8"))` after the sleep command. This should give a more detailed error message.  
 ---
 
 ## Deployment
@@ -136,3 +138,28 @@ Celery broker and backend use different services depending on whether the web se
 #### operation schedule
 Once a new simulation/ solution is requested, the asynchronous job is started and a database entry is created with key, celery_job_id and start_time. The key should be unique in this database, since there is exactly one simulation per key and if the same simulation is requested multiple times, the request is skipped and not added to the database. After starting the calculation, the page is reloaded periodically via javascript. If the job is done, the result is fetched and displayed, the corresponding database entry is deleted.
 
+### Docker Naming Conventions
+Our docker images are created locally, with the `docker-compose build` command. Since the `docker-compose.yml` is located in the ackrep_deployment directory, this directory is prepended to the specified service name. This results in the following image names: <br>
+ackrep_deployment_ackrep-django <br>
+ackrep_deployment_celery_worker <br>
+ackrep_deployment_default_environment <br>
+
+Some images are pulled from remote, resulting in image names such as: <br>
+redis:6.2-alpine <br>
+ghcr.io/ackrep-org/default_environment
+
+Using the above mentioned images, containers can be spun up. Using `docker-compose` the containers have the same name as the compose service. <br>
+The environment containers are started differently, using the `run` argument with an ackrep command. Therefore, the container is called <br>
+`ackrep_deployment_default_environment_run_<hash>` 
+
+When adding new environments, the following files have to be named in s specific manner:
+- `<name>` of the environment: `<some_description>_environment`
+- metadata.yml: name: `<name>`
+- Dockerfile: `Dockerfile_<name>`
+- docker compose service: `<name>`
+
+### Image Publishing
+The `push_image.py` [script](https://github.com/ackrep-org/ackrep_deployment/blob/feature_celery_in_docker/push_image.py) helps with publishing new verions of environments.
+Syntax: `python push_image.py -i <image_name> -v <x.y.z> -m "<message>"`
+
+Uploads specified version and updates ``latest`` tag. 

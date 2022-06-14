@@ -1,6 +1,6 @@
 (ref_api)=
 # API
-Summary of ACKREP - commands.
+Summary of ACKREP - commands. For more details, refer to `script.py` in the [source code](https://github.com/ackrep-org/ackrep_core/blob/main/ackrep_core/script.py).
 
 ```{contents} Table of contents
 :backlinks: none
@@ -33,10 +33,20 @@ Show location of the metadata file in your file system corresponding to the give
 
 
 ### Simulation/ Calculation
-#### Check Solution/ Simulation
-Check to validity of ProblemSpecification - ProblemSolution tuple or a SystemModel specified by the entity key or the path to the `metadata.yml` file. 
+#### Check Solution/ Simulation (depricated)
+```{note}
+Depricated. Use `--check-with-docker` instead. Use this only if you dont have docker installed. Results may vary.
+```
+Check to validity of ProblemSpecification - ProblemSolution tuple or a SystemModel specified by the entity key or the path to the `metadata.yml` file. Uses only locally installed packages.
 
     --check, -c     <key or file_path>
+
+Shows "Success" if valid, "Inaccurate" if the simulation finished but the results did not match the expectation (this happens sometimes with chaotic systems on different operating systems) or "Fail" if the simulation encountered an error. 
+
+#### Check Solution/ Simulation with Docker
+Check to validity of ProblemSpecification - ProblemSolution tuple or a SystemModel specified by the entity key or the path to the `metadata.yml` file. This uses the correct environment specification in `metadata.yml`.
+
+    --check-with-docker, -cwd     <key or file_path>
 
 Shows "Success" if valid, "Inaccurate" if the simulation finished but the results did not match the expectation (this happens sometimes with chaotic systems on different operating systems) or "Fail" if the simulation encountered an error. 
 
@@ -81,7 +91,7 @@ Load repo to database.
 
     -l, --load-repo-to-db       <path>
 
-E.g. cwd is `ackrep_core`: `ackrep -l ../ackrep_data`
+E.g. in `ackrep_core` directory, run: `ackrep -l ../ackrep_data`
 
 ### Running local Web Interface
 Also refer to [additional commands](ref_additional_run_web).
@@ -93,7 +103,7 @@ Start background celery process to pick up asynchronous tasks once they are star
 
 ### Interacting with Environment Images
 #### Create Interactive Session
-Start an interactive session with a docker container of an environment image of your choice. Environment key must be specified.
+Start an interactive session with a docker container of an environment image of your choice. Environment key must be specified. (e.g. default_env key: YJBOX)
 
     --run-interactive-environment       <key>
 
@@ -102,25 +112,31 @@ Render the execscript corresponding to problem solution or system model and plac
 
     --prepare-script        <key>
 
+### Developer Commands
+Additional commands for developers / for debugging can be found in the [source code](https://github.com/ackrep-org/ackrep_core/blob/main/ackrep_core/script.py).
+
+
 ## Additional Commands
 (ref_additional_run_web)=
 ### Running local Web Interface
-Also refer to [ackrep commands](ref_ackrep_run_web).
+Also refer to [ackrep commands](ref_ackrep_run_web) and [Running local server](ref_running_local_server).
 #### Run Server
-Run the server at <http://127.0.0.1:8000/>. This command presumes that the current working directory is `ackrep_core`, that the database is loaded and that the celery workers are up and running.
+Run the server at <http://localhost:8000/>. This command presumes that the current working directory is `ackrep_core`, that the database is loaded and that the celery workers are up and running.
 
     python manage.py runserver
 
 ### Run Tests
-Also refer to the [unittest documentation](ref_unittests)
+Also refer to the [unittest documentation](ref_unittests).
 
 #### Test Core
+Working directory is presumed to be `ackrep_core`. Test the whole framework, a single test case or just a single test.
 
     python manage.py test --keepdb --nocapture ackrep_core.test.test_core
     python manage.py test --keepdb --nocapture ackrep_core.test.test_core:TestCases2
     python manage.py test --keepdb --nocapture ackrep_core.test.test_core:TestCases3.test_check_system_model
 
 #### Test Web
+Working directory is presumed to be `ackrep_core`. Test the whole framework, a single test case or just a single test.
 
     python manage.py test --keepdb --nocapture ackrep_web.test.test_web
     python manage.py test --keepdb --nocapture ackrep_web.test.test_web:TestCases1

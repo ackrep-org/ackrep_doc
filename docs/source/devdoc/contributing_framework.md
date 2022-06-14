@@ -75,6 +75,8 @@ Usual test execution with  `python -m unittest <path>` will not work because dja
 
 At the current stage frontend testing does not happen. However the backend introduces some *unit_tests_comments* (`utc_...`) to the served html sources, such that the tests cases can roughly check if the expected content is shown.
 
+For more details, refer to the implementation of [core tests](https://github.com/ackrep-org/ackrep_core/blob/main/ackrep_core/test/test_core.py) and [web tests](https://github.com/ackrep-org/ackrep_core/blob/main/ackrep_web/test/test_web.py)
+
 ### Test Web
 When running the unittests for ackrep_web, the `TestUI` tests are usually skipped. If you want to run those tests as well you need to:
 - install splinter and selenium
@@ -85,28 +87,33 @@ When running the unittests for ackrep_web, the `TestUI` tests are usually skippe
 - download [chromedriver](https://chromedriver.chromium.org/home)
 - add the directory of the chrome driver executable to your PATH
 
+(ref_running_local_server)=
 ## Running local server
 ### Linux
-When developing the frontend, a local server can be run to look at the result.
+When developing the frontend, a local server can be run to visualize the result.
 
 1. setup the rabbit broker with
   - `sudo apt-get install rabbitmq-server`
   - or with `docker run -d -p 5672:5672 rabbitmq`
+1. new: clone `ackrep_deployment` repo (see [structure](ackrep_complete_structure))
+1. new: [install docker](install_docker)
 1. `pip install -r requirements_celery.txt`
 1. Change to working directory to `ackre_core`.
 2. Run `python -c "from ackrep_core import core; core.load_repo_to_db('../ackrep_data')"`
 3. Run `python manage.py runserver`
-4. Open a new shell and navigate to `ackrep_core`
-5. Run `celery -A ackrep_web worker --loglevel=INFO -c 4` to start concurrent workers
+4. Open a new shell and run `ackrep --start-workers` to start concurrent workers
 
 **Test:**
 - visit <http://localhost:8000/> with your browser and check if the ackrep landing page is shown
 - visit <http://localhost:8000/entities>, search for key (UKJZI), click on "check this solution"; this should load some curves after about 3s.
 
 ### Windows
-When developing the frontend, a local server can be run to look at the result.
+```{note}
+Even though we try to not to implement os specific code, this becomes more difficult with rising complexity. Therefore, we focus on Linux development. There is no guarantee, that the described steps work under Windows. That beeing said, we encourage you to try it out.
+```
+When developing the frontend, a local server can be run to visualize the result.
 
-1. checkout a windows compatible branch of core, e.g `feature_CI`
+1. checkout a windows compatible branch of core, i.e. `feature_CI`
 1. Change to working directory to `ackre_core`.
 2. Run `python -c "from ackrep_core import core; core.load_repo_to_db('../ackrep_data')"`
 3. Run `python manage.py runserver`

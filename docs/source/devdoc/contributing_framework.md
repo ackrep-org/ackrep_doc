@@ -89,16 +89,18 @@ When running the unittests for ackrep_web, the `TestUI` tests are usually skippe
 
 (ref_running_local_server)=
 ## Running local server
-### Linux
+
 When developing the frontend, a local server can be run to visualize the result.
+
+### Linux
 
 1. setup the rabbit broker with
   - `sudo apt-get install rabbitmq-server`
   - or with `docker run -d -p 5672:5672 rabbitmq`
-1. new: clone `ackrep_deployment` repo (see [structure](ackrep_complete_structure))
 1. new: [install docker](install_docker)
-1. `pip install -r requirements_celery.txt`
+1. otional (if you want to meddle with the environment images): clone `ackrep_deployment` repo (see [structure](ackrep_complete_structure))
 1. Change to working directory to `ackre_core`.
+1. `pip install -r requirements_celery.txt`
 2. Run `python -c "from ackrep_core import core; core.load_repo_to_db('../ackrep_data')"`
 3. Run `python manage.py runserver`
 4. Open a new shell and run `ackrep --start-workers` to start concurrent workers
@@ -111,9 +113,8 @@ When developing the frontend, a local server can be run to visualize the result.
 ```{note}
 Even though we try to not to implement os specific code, this becomes more difficult with rising complexity. Therefore, we focus on Linux development. There is no guarantee, that the described steps work under Windows. That beeing said, we encourage you to try it out.
 ```
-When developing the frontend, a local server can be run to visualize the result.
 
-1. checkout a windows compatible branch of core, i.e. `feature_CI`
+1. checkout a windows compatible branch of core, i.e. `windows_stable`
 1. Change to working directory to `ackre_core`.
 2. Run `python -c "from ackrep_core import core; core.load_repo_to_db('../ackrep_data')"`
 3. Run `python manage.py runserver`

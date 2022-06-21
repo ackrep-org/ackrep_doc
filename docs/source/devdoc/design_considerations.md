@@ -97,6 +97,7 @@ Frequent Problems:
 - permission denied for container when accessing data files. This might not be visible on first glance, so when a web test of TestCases2 fails, add `core.logger.critical(response.content.decode("utf8"))` after the sleep command. This should give a more detailed error message.  
 ---
 
+(design_deployment)=
 ## Deployment
 
 ### Concept
@@ -191,4 +192,11 @@ When adding new environments, the following files have to be named in s specific
 The `push_image.py` [script](https://github.com/ackrep-org/ackrep_deployment/blob/feature_celery_in_docker/push_image.py) helps with publishing new verions of environments. <br>
 Syntax: `python push_image.py -i <image_name> -v <x.y.z> -m "<message>"`
 
-Uploads specified version and updates ``latest`` tag. 
+Additionally, the most recent commits of ackrep_core and ackrep_deployment are added to the message. Best practice to avoid confusing behavior in the CI would be:
+- locally commit change to core
+- rebuild images, test behavior
+- if approved, commit and push changes to ackrep_deployment (dockerfiles)
+- run push_script to update remote images
+- push core commits to trigger CI
+
+The script create a label in the dockerfile and rebuild the image with the label. Afterwards it uploads the image with the specified version and updates ``latest`` tag. 

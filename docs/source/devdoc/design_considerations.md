@@ -7,7 +7,9 @@
 ```
 
 ## Data
+
 todo
+
 ---
 
 ## Core
@@ -88,25 +90,53 @@ CI for ut_web is problematic, since celery + broker and docker have to be run in
 
 - The image url part of the tests is skipped when in the CI since the file would have to be copied back to the primary container during the test.
 
-- some permissions have to be changed, in order to allow the container to modify the copied files
+
 
 **Debugging** <br>
 Frequent Problems:
 - permission denied for container when accessing data files. This might not be visible on first glance, so when a web test of TestCases2 fails, add `core.logger.critical(response.content.decode("utf8"))` after the sleep command. This should give a more detailed error message.  
 ---
 
+(design_deployment)=
 ## Deployment
 
 ### Concept
 ```{image} images/deployment_structure.png
 :width: 500
 ```
-The ackrep-django container runs the web interface. The celery_worker container runs in the background. If the "check_solution" button is pressed, the check_view in views.py is called and an asynchronous task is started via the .delay call. This enables the ackrep-django container to continue without having to wait for the calculation result. The celery_worker however determines the correct environment for the current simulation and starts a new docker container with the desired spectification to run the simulation inside. This is achieved by exposing the docker socket of the host to the celery_worker container (including the corresponding permissions) to ensure the new container is a sibling rather a container inside a container. The environment container is configured to execute cli commands passed on startup. In this case, this is the corresponding ackrep-command. The propagation of the the results from env to celery module. The result of the asynchronous task is stored and collected once the page in question is reloaded, and then forgotten.
+The ackrep-django container runs the web interface. The celery_worker container runs in the background. If the "check_solution" button is pressed, the check_view in views.py is called and an asynchronous task is started via the .delay call. This enables the ackrep-django container to continue without having to wait for the calculation result. The celery_worker however determines the correct environment for the current simulation and starts a new docker container ([see below](container_startup)) with the desired spectification to run the simulation inside. This is achieved by exposing the docker socket of the host to the celery_worker container (including the corresponding permissions) to ensure the new container is a sibling rather a container inside a container. The environment container is configured to execute cli commands passed on startup. In this case, this is the corresponding ackrep-command. The result is propagated from env to celery module. The result of the asynchronous task is stored and collected once the page in question is reloaded, and then forgotten.
+
+(container_startup)=
+Since the introduciton of a data volume (containing ackrep_data + _forunittest) mounted simultaniously to all containers, the environment container faces the problem of when to load the database, since its normally only spun up for a single ackrep command and forgotten afterwards. In order to increase performance, the environment containers are recycled as follows: <br>
+Structogram of core.py/check(key):
+- get_entity
+- get env key
+- try to find running env container id
+- if container exists
+    - if container has INcorrect db loaded
+        - shutdown
+- if container NOT already running:
+    - if image available locally:
+        - docker-compose run --detached env_name bash
+    - else: # pull image from remote
+        - docker run --detached ghcr.io/../env_name bash
+    - wait for container to load its database
+    - get container id
+- docker exec id ackrep -c key
+
+The environment container runs detached (in the background). After it loaded its database (via entrypoint script) it runs a dummy command (bash) in order to remain started. Now it can be accessed via ``docker exec`` commands without the need to reload the database.
+````{note}
+Running the remote image with `docker run`: Even though we are running the container in the background (detached -d), we still have to specify -ti (terminal, interactive) to keep the container running in idle (waiting for bash input). Otherwise, the container would stop after running the entrypoint script (load db). This is noteworthy, since -d and -ti seem to be contradictory. (see [commit](https://github.com/ackrep-org/ackrep_core/commit/7c4227238eb08e9cc45b952970ec59b765f62f04))
+````
+
+With the env container not being reloaded for every check, it is important to make sure that the correct database is loaded. E.g. in local testing, one might run `ackrep -cwd UXMFA` wich refers to the ackrep_data repo, after which one might run a unittest for ackrep web, which expects ackrep_data_for_unittests to be loaded. Therefore, the enviroment variables of the data repo (ACKREP_DATA_PATH) inside and outside docker are compared. If there is a difference, the running container is shut down to make sure the correct db is loaded on the following startup.
 
 **data repo**
 
 The ackrep_data repository is not part of the docker images. Rather it is mounted to each container on their respective startup. Naturally, after mounting the volume the database has to be loaded in each container, which is done by an entrypoint script. 
 The volume mapping is specified in the `docker-compose.yml` file, which in turn is called by the `start_docker.py` script. Mountaing a volume to containers is easily done for the `ackrep-django` and `celery_worker` container but is problematic for the `environment` containers. Although these are started from inside the `celery_worker` container (reminder that this creates siblings, and not docker in docker) the volume mapping still has to be `host/.../ackrep_data:code/ackrep_data`. This means the ``celery_worker`` container has to have some information abour its context. This is done by passing the `DATA_REPO_HOST_ADDRESS` env variable from the starter script first to the ``celery_worker`` container and then to the env container with the correct volume mapping. In case of local running without ``ackrep-django`` container, this env variable is created by the celery process which runs directly on host and thus knows the data repo location. In the unit test case, instead of `ackrep_data`, `ackrep_data_for_unittests` is mounted and the corresponding environment variables are passed.
+
+In order to avoid permission errors when accessing the shared data directory, on environment container startup (entrypoint script) the ownership of all ackrep files inside the container are transfered to the local host user. The user inside the container is root, so there is no problem writing to the data volume.
 
 Since the data is only ever added on container startup, the databases are loaded by the entrypoint script of each container. In the case of the environment containers, the correct environment variable has to be passed for the database loading to happen. An exemplary docker command issued by the celery process (`core.py/check`) could look like this: <br>
 normal case:
@@ -127,7 +157,7 @@ unittest case:
     ghcr.io/ackrep-org/default_environment 
     ackrep -c LRHZX
 
-The `start_docker.py` script also changes some permissions (docker.sock, ackrep_data, ackrep_data_for_unittests) so every container can access the files correctly. Maybe a password prompt is encountered.
+The `start_docker.py` script also changes some permissions (docker.sock) so every container can access the files correctly. Maybe a password prompt is encountered.
 
 ### Celery 
 #### configuration
@@ -159,7 +189,14 @@ When adding new environments, the following files have to be named in s specific
 - docker compose service: `<name>`
 
 ### Image Publishing
-The `push_image.py` [script](https://github.com/ackrep-org/ackrep_deployment/blob/feature_celery_in_docker/push_image.py) helps with publishing new verions of environments.
+The `push_image.py` [script](https://github.com/ackrep-org/ackrep_deployment/blob/feature_celery_in_docker/push_image.py) helps with publishing new verions of environments. <br>
 Syntax: `python push_image.py -i <image_name> -v <x.y.z> -m "<message>"`
 
-Uploads specified version and updates ``latest`` tag. 
+Additionally, the most recent commits of ackrep_core and ackrep_deployment are added to the message. Best practice to avoid confusing behavior in the CI would be:
+- locally commit change to core
+- rebuild images, test behavior
+- if approved, commit and push changes to ackrep_deployment (dockerfiles)
+- run push_script to update remote images
+- push core commits to trigger CI
+
+The script create a label in the dockerfile and rebuild the image with the label. Afterwards it uploads the image with the specified version and updates ``latest`` tag. 

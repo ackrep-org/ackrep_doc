@@ -103,4 +103,3 @@ For the deployment to work it is expected to clone them separately one level up 
     - on host: `cd /var/run/`
     - if `ls -n docker.sock` looks like this `srw-rw---- 1 0 998 0 Mai 18 08:01 docker.sock`, then the socket can only be accessed by root and group 998 (sidenote: adding appuser to group 998 (docker group on host) did not accomplish anything). 
     - run `sudo chown <uid>:<gui> docker.sock` to give the container access.
-    - this change of permission doesnt seem to persist through restarts

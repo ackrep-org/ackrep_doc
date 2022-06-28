@@ -6,12 +6,18 @@
 :depth: 3
 :local: true
 ```
+## Software Requirements
+- [Python](https://www.python.org/) (we currently recommend **Python 3.8**)
+- [Git](https://git-scm.com/)
 
-## Without Docker
+## Installation Without Docker
+````{note}
+If you do not already have docker set up on your machine, this is a relatively fast way to get startet. Most of the examples should be possible to execute without the need for docker. But some of the Ackrep examples require a speacial environment to run in, therefore usually docker container are used.  
+````
+(ackrep_setup)=
+### Ackrep Setup:
 
-### Basic Setup:
-
-1. Highly recommended: create new environment (e.g. using anaconda). The current version of the code is tested only for **python 3.8**
+1. (Optional:) Create new environment (e.g. using anaconda).
 2. Create a new empty root directory for the project (e.g. "ackrep")
 
     `cd <root directory>`
@@ -29,17 +35,17 @@
         <ackrep_project_dir>/
         │
         ├── ackrep_data/                   ← separate repository for ackrep_data
-        │  ├── .git/
-        │  └── ...
+        │   ├── .git/
+        │   └── ...
         │
         └── ackrep_core/                   ← separate repository for ackrep_core
-        ├── .git/
-        └── ...
+            ├── .git/
+            └── ...
 
 
 1. Enter the ackrep_core-repo directory, run the following commands from there.
 
-    `cd .\ackrep_core`
+    `cd ackrep_core`
 1. Install dependencies
 
     `pip install -r requirements.txt`
@@ -48,13 +54,12 @@
     `pip install -e .`
 1. Validate Installation 
     ```
-    ackrep --say-hello
-    # Hello!
+    ackrep --version
+    # Version 0.6.0
     ```
 1. Setup the database
   
-    `python manage.py makemigrations`
-    
+    `python manage.py makemigrations` <br>
     `python manage.py migrate --noinput --run-syncdb`
 
 ### Setup advanced control theory algorithms
@@ -62,11 +67,24 @@
 
     `pip install -r requirements_runner.txt`
 
-- If the installation of slycot fails, refer to <https://github.com/python-control/Slycot#installing>.
+    If the installation of ``slycot`` fails, refer to <https://github.com/python-control/Slycot#installing> or remove the packages `slycot` and `casadi` from the requirements file.
 
-## With Docker
-
-TODO
+Now you are ready to execute some examples on your own machine:<br>
+Continue with [running the code from the command line](run_local).
 
 ---
-Continue with [running the code locally](run_local).
+
+## With Docker
+````{note}
+Installing docker comes with some challenges, especially for windows users. But the advantage to be gained is the ability to execute any piece of ackrep code in a deliberately set up environment with all necessary dependancies already installed. One can be fairely certain, that the code inside the environment will behave as intended even after a long period of time.
+````
+- [Install Docker Engine](https://docs.docker.com/engine/install/)
+- Linux Users: consider these [post installation steps](https://docs.docker.com/engine/install/linux-postinstall/)
+- Validate the installation with
+
+    `docker run hello-world`
+
+- If not already done, complete the above described [ackrep setup](ackrep_setup). You do not need to install runner dependancies!
+
+Now you are ready to execute all examples on your own machine:<br>
+Continue with [running the code from the command line](run_local).

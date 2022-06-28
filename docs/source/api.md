@@ -50,15 +50,11 @@ Check to validity of ProblemSpecification - ProblemSolution tuple or a SystemMod
 
 Shows "Success" if valid, "Inaccurate" if the simulation finished but the results did not match the expectation (this happens sometimes with chaotic systems on different operating systems) or "Fail" if the simulation encountered an error. 
 
-#### Check all Solutions
+#### Check all Entities
 (This may take some time.)
 
-    --check-all-solutions
+    --check-all-entities
 
-#### Check all System Models
-(This may take some time.)
-
-    --check-all-system-models
 
 ### Generating Outputs
 <!-- todo working title -->
@@ -108,7 +104,7 @@ Start an interactive session with a docker container of an environment image of 
     --run-interactive-environment       <key>
 
 #### Prepate execscript
-Render the execscript corresponding to problem solution or system model and place it in the docker transfer folder (specified by path to metadata file or key of solution or system model).
+Render the execscript corresponding to problem solution or system model and place it in the ackrep_data folder (specified by path to metadata file or key of solution or system model).
 
     --prepare-script        <key>
 

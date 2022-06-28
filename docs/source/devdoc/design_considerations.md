@@ -106,38 +106,18 @@ Frequent Problems:
 ```
 The ackrep-django container runs the web interface. The celery_worker container runs in the background. If the "check_solution" button is pressed, the check_view in views.py is called and an asynchronous task is started via the .delay call. This enables the ackrep-django container to continue without having to wait for the calculation result. The celery_worker however determines the correct environment for the current simulation and starts a new docker container ([see below](container_startup)) with the desired spectification to run the simulation inside. This is achieved by exposing the docker socket of the host to the celery_worker container (including the corresponding permissions) to ensure the new container is a sibling rather a container inside a container. The environment container is configured to execute cli commands passed on startup. In this case, this is the corresponding ackrep-command. The result is propagated from env to celery module. The result of the asynchronous task is stored and collected once the page in question is reloaded, and then forgotten.
 
-(container_startup)=
-Since the introduciton of a data volume (containing ackrep_data + _forunittest) mounted simultaniously to all containers, the environment container faces the problem of when to load the database, since its normally only spun up for a single ackrep command and forgotten afterwards. In order to increase performance, the environment containers are recycled as follows: <br>
-Structogram of core.py/check(key):
-- get_entity
-- get env key
-- try to find running env container id
-- if container exists
-    - if container has INcorrect db loaded
-        - shutdown
-- if container NOT already running:
-    - if image available locally:
-        - docker-compose run --detached env_name bash
-    - else: # pull image from remote
-        - docker run --detached ghcr.io/../env_name bash
-    - wait for container to load its database
-    - get container id
-- docker exec id ackrep -c key
 
-The environment container runs detached (in the background). After it loaded its database (via entrypoint script) it runs a dummy command (bash) in order to remain started. Now it can be accessed via ``docker exec`` commands without the need to reload the database.
-````{note}
-Running the remote image with `docker run`: Even though we are running the container in the background (detached -d), we still have to specify -ti (terminal, interactive) to keep the container running in idle (waiting for bash input). Otherwise, the container would stop after running the entrypoint script (load db). This is noteworthy, since -d and -ti seem to be contradictory. (see [commit](https://github.com/ackrep-org/ackrep_core/commit/7c4227238eb08e9cc45b952970ec59b765f62f04))
-````
 
 With the env container not being reloaded for every check, it is important to make sure that the correct database is loaded. E.g. in local testing, one might run `ackrep -cwd UXMFA` wich refers to the ackrep_data repo, after which one might run a unittest for ackrep web, which expects ackrep_data_for_unittests to be loaded. Therefore, the enviroment variables of the data repo (ACKREP_DATA_PATH) inside and outside docker are compared. If there is a difference, the running container is shut down to make sure the correct db is loaded on the following startup.
 
 **data repo**
 
+Sharing Volumes:<br>
 The ackrep_data repository is not part of the docker images. Rather it is mounted to each container on their respective startup. Naturally, after mounting the volume the database has to be loaded in each container, which is done by an entrypoint script. 
 The volume mapping is specified in the `docker-compose.yml` file, which in turn is called by the `start_docker.py` script. Mountaing a volume to containers is easily done for the `ackrep-django` and `celery_worker` container but is problematic for the `environment` containers. Although these are started from inside the `celery_worker` container (reminder that this creates siblings, and not docker in docker) the volume mapping still has to be `host/.../ackrep_data:code/ackrep_data`. This means the ``celery_worker`` container has to have some information abour its context. This is done by passing the `DATA_REPO_HOST_ADDRESS` env variable from the starter script first to the ``celery_worker`` container and then to the env container with the correct volume mapping. In case of local running without ``ackrep-django`` container, this env variable is created by the celery process which runs directly on host and thus knows the data repo location. In the unit test case, instead of `ackrep_data`, `ackrep_data_for_unittests` is mounted and the corresponding environment variables are passed.
 
-In order to avoid permission errors when accessing the shared data directory, on environment container startup (entrypoint script) the ownership of all ackrep files inside the container are transfered to the local host user. The user inside the container is root, so there is no problem writing to the data volume.
-
+(container_startup)=
+Loading the Database:<br>
 Since the data is only ever added on container startup, the databases are loaded by the entrypoint script of each container. In the case of the environment containers, the correct environment variable has to be passed for the database loading to happen. An exemplary docker command issued by the celery process (`core.py/check`) could look like this: <br>
 normal case:
 
@@ -156,6 +136,36 @@ unittest case:
     --volumes-from dummy 
     ghcr.io/ackrep-org/default_environment 
     ackrep -c LRHZX
+
+Since the introduciton of a shared data volume (containing ackrep_data + _for_unittests) mounted simultaniously to all containers, the environment container faces the problem of when to load the database, since its normally only spun up for a single ackrep command and stopped and removed afterwards. In order to increase performance, the environment containers are recycled as follows: <br>
+Structogram of core.py/check(key):
+- get_entity
+- get env key
+- try to find running env container id
+- if container exists
+    - if container has INcorrect db loaded
+        - shutdown container
+- if container NOT already running:
+    - if image available locally:
+        - docker-compose run --detached env_name bash
+    - else: # pull image from remote
+        - docker run --detached ghcr.io/../env_name bash
+    - wait for container to load its database
+    - get container id
+- docker exec id ackrep -c key
+
+The environment container runs detached (in the background). After it loaded its database (via entrypoint script) it runs a dummy command (bash) in order to remain started. Now it can be accessed via ``docker exec`` commands without the need to reload the database.
+````{note}
+Running the remote image with `docker run`: Even though we are running the container in the background (detached -d), we still have to specify -ti (terminal, interactive) to keep the container running in idle (waiting for bash input). Otherwise, the container would stop after running the entrypoint script (load db). This is noteworthy, since -d and -ti seem to be contradictory. (see [commit](https://github.com/ackrep-org/ackrep_core/commit/7c4227238eb08e9cc45b952970ec59b765f62f04))
+````
+````{note}
+The latest environment images are only ever pulled from github on container startup, meaning when a container is put into idle, not when it is accessed via ``docker exec``. This means, that to make sure that the most recent version of an environment is used, the currently running environment container has to be shutdown manually from time to time.
+````
+
+On the Topic of File Ownership:<br>
+Sharing a volume between a host and a container is cause for the *host filesystem owner matching problem*. This [blog post](https://www.joyfulbikeshedding.com/blog/2021-03-15-docker-and-the-host-filesystem-owner-matching-problem.html) goes into details about it and how to combat it. In short, host and container both need to have read+write access to the data in the volume. This is achieved by creating a dummy user inside the container and initally running the container as root. On startup (when running the entrypoint script), we change the user id of the dummy user inside the contianer to match the hosts user id. Afterwards, we switch the user insde the container from root to dummy, so all existing files as well as all newly created files can be accessed (and edited) by both dummy and host user.<br>
+This of course is only half the truth since containers are started in two different ways as described above. Most of the time, the a running container is accessed via ``docker exec`` and therefore does not run the entrypoint script. In order to still simulate the same user inside the container as on the outside, we use the ``--user <host_uid>`` option.
+
 
 The `start_docker.py` script also changes some permissions (docker.sock) so every container can access the files correctly. Maybe a password prompt is encountered.
 

@@ -10,28 +10,29 @@ Please also refer to our [contributing constitution](ref_constitution)
 :local: true
 ```
 
-## Adding Problem-Methode-Solution tuples
+## Adding a *Problem-Method-Solution* tuple
+Note: Every entity type (*ProblemSpecification*, *ProblemSolution*, *MethodPackage*) makes sense of its own, e.g. adding a new solution for an already existing problem. However, in many cases it is meaningful to add all three of them.
 
 - Preparation:
-    - [Install](installation) the ackrep software:
+    - [Install](installation) the ackrep software.
 - Integration of new data:
     - New `ProblemSpecification`:
-        - Create a new subirectory: like `ackrep_data/problem_specifications/<your_problem>`.
+        - Create a new subdirectory: like `ackrep_data/problem_specifications/<your_problem>`.
         - Copy your problem-specification-file into the directory and change name to `problem.py`.
         - Generate a new random key: `ackrep --key`.
         - Copy the file `metadata.yml` from an existing entity of the same type and change its content beginning with the new key.
-        - Ensure that the function `evaluate_solution` returns an instance of `ackrep_core.ResultContainer` see examples.
+        - Ensure that the function `evaluate_solution` returns an instance of `ackrep_core.ResultContainer`, see existing examples.
     - New `MethodPackage`:
-        - Create a new subirectory: like `ackrep_data/method_packages/<your_method>/src`.
+        - Create a new subdirectory: like `ackrep_data/method_packages/<your_method>/src`.
         - Copy your code into that directory.
         - Generate a new random key: `ackrep --key`.
-        - Copy the file `metadata.yml` from an existing entity of the same type to `ackrep_data/method_packages/<your_method>` and change its content beginning with the new key.
+        - Copy the file `metadata.yml` from an existing entity of the same type to `ackrep_data/method_packages/<your_method>` and change its content beginning with the new key.    
     - New `ProblemSolution`:
-        - Create a new subirectory: like `ackrep_data/problem_solutions/<your_problem_solution>`.
+        - Create a new subdirectory: like `ackrep_data/problem_solutions/<your_problem_solution>`.
         - Copy your problem-solution-file into the directory and change name to `solution.py`.
         - Generate a new random key: `ackrep --key`.
         - Copy the file `metadata.yml` from an existing entity of the same type and change its content beginning with the new key.
-        - Add all keys of solved problems and dependent packages.
+        - Add all keys of solved problems and dependent method packages.
 - Evaluate solution:
     - Change working directory to `ackrep_data`.
     - Run `ackrep --load-repo-to-db .` in that directory.
@@ -43,8 +44,8 @@ Please also refer to our [contributing constitution](ref_constitution)
             - ImportError due to missing package in the python_path (see `execscript.py` what actually is inserted); Probable cause: missing or wrong key in `metadata.yml`
             - Bad return-value of `evaluate_solution`
 
-## Adding System Models
-directory for a new system model: `ackrep_data\system_models\<model_name>\`
+## Adding a System Model
+Directory for a new system model: `ackrep_data/system_models/<model_name>/`
 
 1. Copy the `_template`-folder. Rename it in the following way: `<model_name>_system`
 2. Generate a new key with `ackrep --key` 
@@ -53,7 +54,7 @@ directory for a new system model: `ackrep_data\system_models\<model_name>\`
     - add a name, short description and suitable tags
     - fill in your full name and email in the creator space
         ``` 
-         creator: 'Max Mustermann <max.mustermann{ät}gmail.com>'
+         creator: 'Max Musterman <max.musterman{ät}gmail.com>'
         ```
     - add the creation date like `2022-04-21`
     - insert the estimated runtime of the simulation such as `10s`
@@ -62,6 +63,7 @@ directory for a new system model: `ackrep_data\system_models\<model_name>\`
         - define the number of inputs `self.u_dim`
         - define the system dimension `self.sys_dim`
         - in case your model is an n extendable system:
+            - see example *n_integrator_chain_system* (Key: `CAS0M`)
             - remove `self.sys_dim`, you don't have to define it
             - define `self.default_param_sys_dim` for the simulation, this dimension should suit the dimension of the example in your parameter file
     - adjust `def uu_default_function(self)`
@@ -70,22 +72,22 @@ directory for a new system model: `ackrep_data\system_models\<model_name>\`
         - transform symbolic to numeric function via `st.expr_to_func()`
         - adjust `def uu_rhs(t. xx_nv)`
             - create the numerical values 
-            - return inputs within a list
+            - return inputs wrapped by a list
     - adjust `def get_rhs_symbolic(self)`
         - get the symbolic state components, parameters and inputs
         - define the symbolic functions
-        - return the functions within a list
+        - return the functions wrapped by a list
 5. Edit `parameters.py`
     - in case your model doesn't need any parameters, just leave a comment like `#This model does not need any parameters.` and delete everything else. Otherwise:
     - create the symbolic parameters such as 
         ```
         pp_symb = [l, g, a, omega, gamma] = sp.symbols('l, g, a, omega, gamma', real=True)
         ```
-    - you can define auxiliary symbolic parameters, which should not be numerical represented in the parameter table
+    - you can define auxiliary symbolic parameters, which should not be numerical represented in the parameter table (of the latex doc file)
     - define symbolic parameter functions and add them to the list `pp_sf`
-    - fill in the list for substitution, if you don't need it leave the list empty. **Don't** delete it.
+    - fill in the list for substitution; if you don't need it leave the list empty. **Don't** delete it.
     - define the LaTeX table
-        - the table always contains the two columns `Symbols` and `Variables`. You can add other columns before and afte these, for example `Parameter Name` or `Unit` 
+        - the table always contains the two columns `Symbol` and `Value`. You can add additional columns before and afte these, for example `Parameter Name` or `Unit` 
         - define for each new column the entries in a list
         - when it is about a column before the fixed ones, add it to the list `start_columns_list`, if not add it to `end_columns_list`
         - for example:
@@ -118,23 +120,26 @@ directory for a new system model: `ackrep_data\system_models\<model_name>\`
     - adjust `def simulate()`
         - define initial state values `xx0`, simulation time `tend` and vector of times for simulation `tt`
         - define inputfunction `uu`
+        - ⚠TODO: refer to `uu_default_function` above
     - adjust `def save_plot()`
         - plot here the relevant and representing data of your model
     - adjust `def evaluate_simulation(simulation_data)`
         - fill in the `expected_final_states` of your model to check whether everything is working out
-7. Got to `_system_model_data`
+7. Go to `_system_model_data`
     - adjust `documentation.tex`
         - update the headline with your system model name
-        - explain parameters, inputs and state components in the subsection `Nomenclature for Model Equations` 
+        - explain parameters, inputs and state components in the subsection `Nomenclature for Model Equations`
+            - ⚠TODO: clearify the connection between the latex-table above and this file. Where should parameters be explained?
         - define state vectors, input vectors and system equations
-        - list parameters and outputs, if they don't exist just fill in `<not defined>`
-        - note the assumptions made
-        - describe  the `Derivation and Explanation` 
+        - list parameters and outputs; if they don't exist just fill in `<not defined>`
+        - specify the assumptions underlying this model (e.g. neglected fast subsystems, valid ranges of system quantities)
+        - optionally fill out the section *Derivation and Explanation* (how was the model derived, what is important to know)
         - add your references 
 8. Update the `parameters.tex` via `ackrep --update-parameter-tex <key>` 
 9. Create the `documentation.pdf` via `ackrep --create-pdf <key>`
-10. Test your model:
+10. Test your model locally:
     - `ackrep -csm <key>` = `ackrep --check-system-model <key>` 
     - or via webserver:
         - `ackrep -l ../ackrep_data`
         - `python manage.py runserver`
+        - ⚠TODO: update (remove) this according to the new CI-based approach

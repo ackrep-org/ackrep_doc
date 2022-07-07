@@ -119,8 +119,8 @@ Directory for a new system model: `ackrep_data/system_models/<model_name>/`
 6. Edit `simulation.py`
     - adjust `def simulate()`
         - define initial state values `xx0`, simulation time `tend` and vector of times for simulation `tt`
+        - in case you don't want to define an inputfunction, which is different to the  `uu_default_function` remove `uu = ` and `simulation_data.uu = `. The `uu_default_function` is automatically used as inputfunction. Otherwise:
         - define inputfunction `uu`
-        - ⚠TODO: refer to `uu_default_function` above
     - adjust `def save_plot()`
         - plot here the relevant and representing data of your model
     - adjust `def evaluate_simulation(simulation_data)`
@@ -129,7 +129,8 @@ Directory for a new system model: `ackrep_data/system_models/<model_name>/`
     - adjust `documentation.tex`
         - update the headline with your system model name
         - explain parameters, inputs and state components in the subsection `Nomenclature for Model Equations`
-            - ⚠TODO: clearify the connection between the latex-table above and this file. Where should parameters be explained?
+            - in contrast to the parameter table, here you can explain the parameters in more detail
+            - the table is intended for a quick overview  of the parameters
         - define state vectors, input vectors and system equations
         - list parameters and outputs; if they don't exist just fill in `<not defined>`
         - specify the assumptions underlying this model (e.g. neglected fast subsystems, valid ranges of system quantities)

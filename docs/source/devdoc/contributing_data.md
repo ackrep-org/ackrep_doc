@@ -44,7 +44,7 @@ Note: Every entity type (*ProblemSpecification*, *ProblemSolution*, *MethodPacka
             - ImportError due to missing package in the python_path (see `execscript.py` what actually is inserted); Probable cause: missing or wrong key in `metadata.yml`
             - Bad return-value of `evaluate_solution`
 
-## Adding a System Model
+## Adding a *System Model*
 Directory for a new system model: `ackrep_data/system_models/<model_name>/`
 
 1. Copy the `_template`-folder. Rename it in the following way: `<model_name>_system`
@@ -130,7 +130,7 @@ Directory for a new system model: `ackrep_data/system_models/<model_name>/`
         - update the headline with your system model name
         - explain parameters, inputs and state components in the subsection `Nomenclature for Model Equations`
             - in contrast to the parameter table, here you can explain the parameters in more detail
-            - the table is intended for a quick overview  of the parameters
+            - the table is intended for a quick overview  of the parameters and is automatically build based on `parameters.py`
         - define state vectors, input vectors and system equations
         - list parameters and outputs; if they don't exist just fill in `<not defined>`
         - specify the assumptions underlying this model (e.g. neglected fast subsystems, valid ranges of system quantities)
@@ -140,7 +140,4 @@ Directory for a new system model: `ackrep_data/system_models/<model_name>/`
 9. Create the `documentation.pdf` via `ackrep --create-pdf <key>`
 10. Test your model locally:
     - `ackrep -csm <key>` = `ackrep --check-system-model <key>` 
-    - or via webserver:
-        - `ackrep -l ../ackrep_data`
-        - `python manage.py runserver`
-        - ⚠TODO: update (remove) this according to the new CI-based approach
+    

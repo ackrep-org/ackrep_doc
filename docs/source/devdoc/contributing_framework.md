@@ -100,7 +100,6 @@ When developing the frontend, a local server can be run to visualize the result.
 1. new: [install docker](install_docker)
 1. otional (if you want to meddle with the environment images): clone `ackrep_deployment` repo (see [structure](ackrep_complete_structure))
 1. Change to working directory to `ackre_core`.
-1. `pip install -r requirements_celery.txt`
 2. Run `python -c "from ackrep_core import core; core.load_repo_to_db('../ackrep_data')"`
 3. Run `python manage.py runserver`
 4. Open a new shell and run `ackrep --start-workers` to start concurrent workers

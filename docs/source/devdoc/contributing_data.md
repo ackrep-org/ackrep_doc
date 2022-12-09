@@ -83,7 +83,20 @@ Directory for a new system model: `ackrep_data/system_models/<model_name>/`
         ```
         pp_symb = [l, g, a, omega, gamma] = sp.symbols('l, g, a, omega, gamma', real=True)
         ```
-    - you can define auxiliary symbolic parameters, which should not be numerical represented in the parameter table (of the latex doc file)
+    - OPTIONAL: You can define a range your parameters. This range appears in the pdf. If a parameters is chose outside its designated range, a warning is issued.
+        ````{note}
+        Right now, you can only define a parameter range for *all* parameters or for none.
+        ````
+        You have to provide the variable `pp_range_list` as a `list` of the same length as `pp_symb`. `pp_range_list` has to contain a range object for each parameter in the same order as they appear in `pp_symb`. Valid values for `pp_range_list` are:
+
+        | Information to be expressed                               | Syntax       |
+        |-----------------------------------------------------------|--------------|
+        | open Intervall (a,b) (use `np.inf` to represent infinity) | `list` (a,b) |
+        | closed intervall [a,b]                                    | `list` [a,b] |
+        | number field (e.g. Z)                                     | `str` "Z"    |
+        | parameter is constant/  parameter shall not be changed    | ``None``         |
+
+    - you can define auxiliary symbolic parameters, which should not be numerically represented in the parameter table
     - define symbolic parameter functions and add them to the list `pp_sf`
     - fill in the list for substitution; if you don't need it leave the list empty. **Don't** delete it.
     - define the LaTeX table
@@ -122,7 +135,8 @@ Directory for a new system model: `ackrep_data/system_models/<model_name>/`
         - in case you don't want to define an inputfunction, which is different to the  `uu_default_function` remove `uu = ` and `simulation_data.uu = `. The `uu_default_function` is automatically used as inputfunction. Otherwise:
         - define inputfunction `uu`
     - adjust `def save_plot()`
-        - plot here the relevant and representing data of your model
+        - plot the relevant and representing data of your model here
+        - if you want to create multiple plots, either use subplots or create them separately and always call `save_plot_in_dir(<plot_name>.png)` after each plot. Make sure to chose unique names. Plots will appear in alphanumeric order.
     - adjust `def evaluate_simulation(simulation_data)`
         - fill in the `expected_final_states` of your model to check whether everything is working out
 7. Go to `_system_model_data`

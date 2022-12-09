@@ -8,7 +8,7 @@
 
 ## Data
 
-todo
+Entities in the data repository are checked by the CI. On commit, the CI tests all entities and prepares a report of failing and succeding entities. This report is commited to the [ackrep_ci_results repo](https://github.com/ackrep-org/ackrep_ci_results). Additionally binary data such as plots and notebook htmls are prepared as artifacts. Once the CI is done, a webhook is triggered, prompting the server to download the artifacts and pulling the latest CI results. 
 
 ---
 
@@ -33,62 +33,35 @@ Which information is show in the different cases of settings, error type and exe
 ---
 
 ## Web
-### Post Celery+Docker Unittests
-- challenge: unittests simulate web interface -> checks are performed via view.py and therefore asynchronous and inside docker environment container
-- celery workers are run in background (to have the test script continue) in setup of test 
-    ```
-    cmd = "ackrep --start-workers"
-    self.worker = subprocess.Popen(f"nohup {cmd}", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    ```
-    and killed on tearDown
-    ```
-    os.chdir(os.path.join(core.root_path, "ackrep_core"))
-    res = subprocess.run(["celery", "-A", "ackrep_web", "control", "shutdown"], text=True, capture_output=True)
-    ```
+### Unittests
 - problems: 
-    - if test changes data (e.g. to test debug printing) this change is not reflected inside the container
-    - loading db insider container
+    - loading db inside container
     - inside container there is no difference between ut and normal use case
 - solution:
     - ut-repo gets a permanently broken system model for testing debug messaging (LRHZX)
-    - loading test db is done by running test setup methode in dockerfile
-    to distinguish between ut and nominal use case, environment variables are passed with the docker command to the container, specificly tailored to work inside the container
+    - to distinguish between ut and nominal use case, environment variables are passed with the docker command to the container, specificly tailored to work inside the container
 
 ## CI
-Continuous Integration for core works fine.
-
-CI for ut_web is problematic, since celery + broker and docker have to be run inside the ci-container. Docker can be run by adding the step:
+Docker can be run by adding the step:
 
     - setup_remote_docker:
         version: 20.10.14
         docker_layer_caching: true
 
 
-- **Solution**: run rabbit image parallel to main job and let celery connect via localhost
-    ```
-    jobs: # A basic unit of work in a run
-    setup: 
-        # directory where steps are run
-        working_directory: ~/ackrep_core
-        docker: # run the steps with Docker
-        # CircleCI Python images available at: https://hub.docker.com/r/circleci/python/
-        - image: cimg/python:3.8
-            environment: # environment variables for primary container
-            SKIP_TEST_CREATE_PDF: "True"
-            CI: "True"
-        - image: rabbitmq:3.8.16-management-alpine
-        steps: # steps that comprise the `build` job
-        - checkout
-        ...
-    ```
-    ```
-    broker_url = "pyamqp://guest@localhost//"
-    result_backend = "rpc://"
-    ```
-
-- volume mounting does not exist inside celery (see <https://circleci.com/docs/2.0/building-docker-images/#mounting-folders>). The used workaround is to create a dummy container with a dummy volume (**without** mapping to host!), copy all files into the dummy container (at the volume location) and the start the main container with `--volumes-from dummy`.
+- volume mounting does not exist inside CI (see <https://circleci.com/docs/2.0/building-docker-images/#mounting-folders>). The used workaround is to create a dummy container with a dummy volume (**without** mapping to host!), copy all files into the dummy container (at the volume location) and the start the main container with `--volumes-from dummy`.
 
 - The image url part of the tests is skipped when in the CI since the file would have to be copied back to the primary container during the test.
+
+## Webhook
+circle ci api v1 <br>
+<https://circleci.com/docs/api/v1/index.html#artifacts-of-the-latest-build>
+````{note}
+api v1 gonna be depricated soon
+````
+api v2 not very explicit, didnt work <br>
+<https://circleci.com/docs/api/v2/index.html#operation/getJobArtifacts>
+
 
 
 
@@ -101,14 +74,15 @@ Frequent Problems:
 ## Deployment
 
 ### Concept
-```{image} images/deployment_structure.png
+<!-- ```{image} images/deployment_structure.png
 :width: 500
-```
-The ackrep-django container runs the web interface. The celery_worker container runs in the background. If the "check_solution" button is pressed, the check_view in views.py is called and an asynchronous task is started via the .delay call. This enables the ackrep-django container to continue without having to wait for the calculation result. The celery_worker however determines the correct environment for the current simulation and starts a new docker container ([see below](container_startup)) with the desired spectification to run the simulation inside. This is achieved by exposing the docker socket of the host to the celery_worker container (including the corresponding permissions) to ensure the new container is a sibling rather a container inside a container. The environment container is configured to execute cli commands passed on startup. In this case, this is the corresponding ackrep-command. The result is propagated from env to celery module. The result of the asynchronous task is stored and collected once the page in question is reloaded, and then forgotten.
+``` -->
+TODO
+All entities in the data repo are checked via CI. The results of the tests as well as potential binary data (e.g. plots) are stored as artifacts. The results in the form of a yaml file are committed to the ackrep_ci_results repo by the CI. After every test tun, a webhook is triggert, so prompt the server to download the most recent results and binary data. This is shown when one visits the view entity detail view.
 
 
 
-With the env container not being reloaded for every check, it is important to make sure that the correct database is loaded. E.g. in local testing, one might run `ackrep -cwd UXMFA` wich refers to the ackrep_data repo, after which one might run a unittest for ackrep web, which expects ackrep_data_for_unittests to be loaded. Therefore, the enviroment variables of the data repo (ACKREP_DATA_PATH) inside and outside docker are compared. If there is a difference, the running container is shut down to make sure the correct db is loaded on the following startup.
+With the env container not being reloaded for every check, it is important to make sure that the correct database is loaded. E.g. in local testing, one might run `ackrep -cwd UXMFA` which refers to the ackrep_data repo, after which one might run a unittest for ackrep web, which expects ackrep_data_for_unittests to be loaded. Therefore, the enviroment variables of the data repo (ACKREP_DATA_PATH) inside and outside docker are compared. If there is a difference, the running container is shut down to make sure the correct db is loaded on the following startup.
 
 **data repo**
 
@@ -167,17 +141,6 @@ Sharing a volume between a host and a container is cause for the *host filesyste
 This of course is only half the truth since containers are started in two different ways as described above. Most of the time, the a running container is accessed via ``docker exec`` and therefore does not run the entrypoint script. In order to still simulate the same user inside the container as on the outside, we use the ``--user <host_uid>`` option.
 
 
-The `start_docker.py` script also changes some permissions (docker.sock) so every container can access the files correctly. Maybe a password prompt is encountered.
-
-### Celery 
-#### configuration
-Even though the code of the celery configuration lives in core, this is more of a deployment topic.
-
-Celery broker and backend use different services depending on whether the web server is run locally from the cli or from inside docker. From the cli [RabbitMQ](https://docs.celeryq.dev/en/stable/getting-started/backends-and-brokers/rabbitmq.html#broker-rabbitmq) is used, from inside docker we use [redis](https://docs.celeryq.dev/en/stable/getting-started/backends-and-brokers/redis.html#broker-redis). In the default case, we use RabbitMQ, unless a environment variable (usually only set inside the docker container) is specified.
-
-#### operation schedule
-Once a new simulation/ solution is requested, the asynchronous job is started and a database entry is created with key, celery_job_id and start_time. The key should be unique in this database, since there is exactly one simulation per key and if the same simulation is requested multiple times, the request is skipped and not added to the database. After starting the calculation, the page is reloaded periodically via javascript. If the job is done, the result is fetched and displayed, the corresponding database entry is deleted.
-
 ### Docker Naming Conventions
 Our docker images are created locally, with the `docker-compose build` command. Since the `docker-compose.yml` is located in the ackrep_deployment directory, this directory is prepended to the specified service name. This results in the following image names: <br>
 ackrep_deployment_ackrep-django <br>
@@ -196,7 +159,7 @@ When adding new environments, the following files have to be named in s specific
 - `<name>` of the environment: `<some_description>_environment`
 - metadata.yml: name: `<name>`
 - Dockerfile: `Dockerfile_<name>`
-- docker compose service: `<name>`
+- (docker compose service: `<name>`, for dev only)
 
 ### Image Publishing
 The `push_image.py` [script](https://github.com/ackrep-org/ackrep_deployment/blob/feature_celery_in_docker/push_image.py) helps with publishing new verions of environments. <br>

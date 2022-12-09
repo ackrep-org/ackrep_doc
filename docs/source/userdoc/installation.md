@@ -10,12 +10,8 @@
 - [Python](https://www.python.org/) (we currently recommend **Python 3.8**)
 - [Git](https://git-scm.com/)
 
-## Installation Without Docker
-````{note}
-If you do not already have docker set up on your machine, this is a relatively fast way to get startet. Most of the examples should be possible to execute without the need for docker. But some of the Ackrep examples require a speacial environment to run in, therefore usually docker container are used.  
-````
 (ackrep_setup)=
-### Ackrep Setup:
+## Ackrep Setup:
 
 1. (Optional:) Create new environment (e.g. using anaconda).
 2. Create a new empty root directory for the project (e.g. "ackrep")
@@ -32,16 +28,24 @@ If you do not already have docker set up on your machine, this is a relatively f
 
     Your project directory should look like this:
 
-        <ackrep_project_dir>/
+        <root_dir>/
+        ├── ackrep/
+        │   ├── ackrep_data/                   ← separate repository for ackrep_data
+        │   │   ├── .git/
+        │   │   └── ...
+        │   │
+        │   └── ackrep_core/                   ← separate repository for ackrep_core
+        │       ├── .git/
+        │       └── ...
         │
-        ├── ackrep_data/                   ← separate repository for ackrep_data
-        │   ├── .git/
-        │   └── ...
-        │
-        └── ackrep_core/                   ← separate repository for ackrep_core
-            ├── .git/
-            └── ...
+        └── erk/                               ← if this is your first visit here, dont worry about this.
+            └── erk-data                         if you want to use pyerk functionality, checkout the links below
+                └─ ocse/
+                    ├── .git/
+                    └── ...
 
+    ([PyERK documentation](https://pyerk-core.readthedocs.io/en/develop_os/index.html),
+    [PYERK repository](https://github.com/ackrep-org/pyerk-core))
 
 1. Enter the ackrep_core-repo directory, run the following commands from there.
 
@@ -62,17 +66,9 @@ If you do not already have docker set up on your machine, this is a relatively f
     `python manage.py makemigrations` <br>
     `python manage.py migrate --noinput --run-syncdb`
 
-### Setup advanced control theory algorithms
-- Install Dependencies
-
-    `pip install -r requirements_runner.txt`
-
-    If the installation of ``slycot`` fails, refer to <https://github.com/python-control/Slycot#installing> or remove the packages `slycot` and `casadi` from the requirements file.
-
-Now you are ready to execute some examples on your own machine:<br>
-Continue with [running the code from the command line](run_local).
-
 ---
+
+## Setup advanced control theory algorithms
 
 ## With Docker
 ````{note}
@@ -88,3 +84,20 @@ Installing docker comes with some challenges, especially for windows users. But 
 
 Now you are ready to execute all examples on your own machine:<br>
 Continue with [running the code from the command line](run_local).
+
+---
+
+### Without Docker
+````{warning}
+If you do not already have docker set up on your machine, this is a relatively fast way to get startet. Most of the examples should be possible to execute without the need for docker. But some of the Ackrep examples require a speacial environment to run in, therefore usually docker containers are used.  
+````
+- Install Dependencies
+
+    `pip install -r requirements_runner.txt`
+
+    If the installation of ``slycot`` fails, refer to <https://github.com/python-control/Slycot#installing> or remove the packages `slycot` and `casadi` from the requirements file.
+
+Now you are ready to execute some examples on your own machine:<br>
+Continue with [running the code from the command line](run_local).
+
+

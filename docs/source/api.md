@@ -33,7 +33,7 @@ Show location of the metadata file in your file system corresponding to the give
 
 
 ### Simulation/ Calculation
-#### Check Solution/ Simulation (depricated)
+#### Check Entity (depricated)
 ```{note}
 Depricated. Use `--check-with-docker` instead. Use this only if you dont have docker installed. Results may vary.
 ```
@@ -43,7 +43,7 @@ Check to validity of ProblemSpecification - ProblemSolution tuple or a SystemMod
 
 Shows "Success" if valid, "Inaccurate" if the simulation finished but the results did not match the expectation (this happens sometimes with chaotic systems on different operating systems) or "Fail" if the simulation encountered an error. 
 
-#### Check Solution/ Simulation with Docker
+#### Check Entity with Docker
 Check to validity of ProblemSpecification - ProblemSolution tuple or a SystemModel specified by the entity key or the path to the `metadata.yml` file. This uses the correct environment specification in `metadata.yml`.
 
     --check-with-docker, -cwd     <key or file_path>
@@ -92,14 +92,10 @@ E.g. in `ackrep_core` directory, run: `ackrep -l ../ackrep_data`
 ### Running local Web Interface
 Also refer to [additional commands](ref_additional_run_web).
 (ref_ackrep_run_web)=
-#### Start Celery Workers
-Start background celery process to pick up asynchronous tasks once they are started.
-
-    --start-workers
 
 ### Interacting with Environment Images
 #### Create Interactive Session
-Start an interactive session with a docker container of an environment image of your choice. Environment key must be specified. (e.g. default_env key: YJBOX)
+Start an interactive session with a docker container of an environment image of your choice. Environment key must be specified. (e.g. default_env key: CDAMA)
 
     --run-interactive-environment       <key>
 
@@ -117,7 +113,7 @@ Additional commands for developers / for debugging can be found in the [source c
 ### Running local Web Interface
 Also refer to [ackrep commands](ref_ackrep_run_web) and [Running local server](ref_running_local_server).
 #### Run Server
-Run the server at <http://localhost:8000/>. This command presumes that the current working directory is `ackrep_core`, that the database is loaded and that the celery workers are up and running.
+Run the server at <http://localhost:8000/>. This command presumes that the current working directory is `ackrep_core` and that the database is loaded.
 
     python manage.py runserver
 

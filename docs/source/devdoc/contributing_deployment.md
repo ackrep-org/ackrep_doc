@@ -87,19 +87,10 @@ For the deployment to work it is expected to clone them separately one level up 
 - create a directory structure like above
 - `cd ackrep_deployment`
 - build the all the containers: `docker-compose build`
-- **deprecated:** run the main container (other containers are started due to dependancies): `docker-compose up celery_worker`
-- **new** run `python start_docker.py` to avoid permission issues
+- run `docker-compose up ackrep-django`
 - visit <http://localhost:8000/> with your browser and check if the ackrep landing page is shown
 
 
 ## Troubleshooting:
 - also refer to [design considerations](design_deployment)
-- One problem is/was to be able to run a docker container from within another container, i.e. a script in the celery worker container has to start some environment container to do some actual maths. This is done by creating a sibling container and exposing the host docker socket to the first container. The problem is, that the socket is root owned and cant be excessed by the appuser inside the first docker container, typical error message: 
 
-    `Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/json?filters=%7B%22reference%22%3A%7B%22ackrep_deployment_test_environment%22%3Atrue%7D%7D": dial unix /var/run/docker.sock: connect: permission denied`
-
-    Workaround: manually change the ownership of `/var/run/docker.sock` to appuser
-    - inide the active container: `id` -> gets uid and gid of the appuser e.g. 999:999
-    - on host: `cd /var/run/`
-    - if `ls -n docker.sock` looks like this `srw-rw---- 1 0 998 0 Mai 18 08:01 docker.sock`, then the socket can only be accessed by root and group 998 (sidenote: adding appuser to group 998 (docker group on host) did not accomplish anything). 
-    - run `sudo chown <uid>:<gui> docker.sock` to give the container access.

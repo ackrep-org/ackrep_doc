@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.52347032"
-     inkscape:cx="665.74931"
-     inkscape:cy="519.60922"
+     inkscape:zoom="0.26173516"
+     inkscape:cx="735.47627"
+     inkscape:cy="-2559.8395"
      inkscape:window-width="1920"
      inkscape:window-height="1137"
      inkscape:window-x="-8"
@@ -360,6 +360,313 @@
          style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
          d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path29736-0-6-7" />
+    </marker>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipath_lpe_path-effect29430-4-9">
+      <rect
+         style="display:none;fill:#ff0000;stroke:#ff0000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect29471-7"
+         width="100.26103"
+         height="64.277657"
+         x="63.593697"
+         y="36.601139"
+         d="M 63.593697,36.601139 H 163.85473 V 100.8788 H 63.593697 Z" />
+      <path
+         id="lpe_path-effect29430-4-8"
+         style="fill:#ff0000;stroke:#ff0000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         class="powerclip"
+         d="M 70.224289,20.992321 H 181.48532 V 96.269978 H 70.224289 Z M 63.593697,36.601139 V 100.8788 H 163.85473 V 36.601139 Z" />
+    </clipPath>
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect29430-4-7"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Füllregel Gerade-Ungerade im &lt;b&gt;Füllung und Kontur&lt;/b&gt;-Dialog verwenden, wenn das Anwenden des Ausschnitts mit nachfolgendem Umwandeln in Pfade kein Ergebnis bringt" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipath_lpe_path-effect29430-8-6">
+      <rect
+         style="display:none;fill:#ff0000;stroke:#ff0000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect29506-6"
+         width="100.26103"
+         height="64.277657"
+         x="63.593697"
+         y="36.601139"
+         d="M 63.593697,36.601139 H 163.85473 V 100.8788 H 63.593697 Z" />
+      <path
+         id="lpe_path-effect29430-8-4"
+         style="fill:#ff0000;stroke:#ff0000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         class="powerclip"
+         d="M 70.224289,20.992321 H 181.48532 V 96.269978 H 70.224289 Z M 63.593697,36.601139 V 100.8788 H 163.85473 V 36.601139 Z" />
+    </clipPath>
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect29430-8-4"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Füllregel Gerade-Ungerade im &lt;b&gt;Füllung und Kontur&lt;/b&gt;-Dialog verwenden, wenn das Anwenden des Ausschnitts mit nachfolgendem Umwandeln in Pfade kein Ergebnis bringt" />
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-16-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-6-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-16-5-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-6-7-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-1-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-23-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-1-1-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-23-6-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-1-1-3-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-23-6-1-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-39-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-8-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-39-3-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-8-1-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-3-1"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-2-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-3-3-1"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-2-9-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-3-3-2-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-2-9-8-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-3-3-2-3-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-2-9-8-7-5" />
+    </marker>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipath_lpe_path-effect29430-4-7">
+      <rect
+         style="display:none;fill:#ff0000;stroke:#ff0000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect1759"
+         width="100.26103"
+         height="64.277657"
+         x="63.593697"
+         y="36.601139"
+         d="M 63.593697,36.601139 H 163.85473 V 100.8788 H 63.593697 Z" />
+      <path
+         id="lpe_path-effect29430-4-7"
+         style="fill:#ff0000;stroke:#ff0000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         class="powerclip"
+         d="M 70.224289,20.992321 H 181.48532 V 96.269978 H 70.224289 Z M 63.593697,36.601139 V 100.8788 H 163.85473 V 36.601139 Z" />
+    </clipPath>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-3-1-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-2-4-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-16-6-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-6-5-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-16-6-2-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-6-5-0-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-3-1-1"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-2-4-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-16-6-2-2-1"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-6-5-0-6-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-16-6-1"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path29736-0-6-5-4" />
     </marker>
   </defs>
   <g
@@ -997,5 +1304,532 @@
          x="-130.43788"
          y="60.188793"
          id="tspan27273">&lt;proj_dir&gt;/ackrep_data</tspan></text>
+    <g
+       id="g32571-6"
+       transform="translate(190.95938,-629.12188)"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect850-8"
+         width="84.186745"
+         height="65.335739"
+         x="-288.54172"
+         y="-151.30968" />
+      <text
+         xml:space="preserve"
+         style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+         x="-285.48126"
+         y="-141.10114"
+         id="text1556-0"><tspan
+           sodipodi:role="line"
+           id="tspan1554-9"
+           style="stroke-width:0.264583"
+           x="-285.48126"
+           y="-141.10114">Container:</tspan><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.264583"
+           x="-285.48126"
+           y="-130.51779"
+           id="tspan1558-6">Ackrep-Django</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+         x="-285.48126"
+         y="-114.29607"
+         id="text2852-1"><tspan
+           sodipodi:role="line"
+           id="tspan2850-7"
+           style="stroke-width:0.264583"
+           x="-285.48126"
+           y="-114.29607">Web Interface</tspan><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.264583"
+           x="-285.48126"
+           y="-103.71273"
+           id="tspan30682-4"> view.py</tspan><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.264583"
+           x="-285.48126"
+           y="-93.129395"
+           id="tspan7232">  read yaml</tspan><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.264583"
+           x="-285.48126"
+           y="-82.546051"
+           id="tspan4890">   </tspan><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.264583"
+           x="-285.48126"
+           y="-71.962715"
+           id="tspan2856-6" /></text>
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect5800-9"
+         width="84.186401"
+         height="37.195431"
+         x="-288.54218"
+         y="-123.16899" />
+    </g>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect850-5-9-8-0-1"
+       width="119.46779"
+       height="64.277657"
+       x="-237.30656"
+       y="-920.58472"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-234.29605"
+       y="-910.42603"
+       id="text1556-5-5-5-7-1"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-234.29605"
+         y="-910.42603"
+         id="tspan1558-1-9-3-1-7">Volume:</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-234.29605"
+         y="-899.84271"
+         id="tspan16920-5">ackrep_data</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect5800-6-6-2-7-4"
+       width="119.46832"
+       height="36.59269"
+       x="-237.3071"
+       y="-892.89972"
+       ry="0"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <g
+       id="g32584-1"
+       transform="translate(-275.32113,-869.79247)"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <g
+         id="g29055-9"
+         transform="translate(-11.119701,-1.0108819)">
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect850-5-9-7"
+           width="100.26103"
+           height="64.277657"
+           x="49.94706"
+           y="-150.41219" />
+        <text
+           xml:space="preserve"
+           style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+           x="52.957569"
+           y="-140.25351"
+           id="text1556-5-5-57"><tspan
+             sodipodi:role="line"
+             id="tspan1554-6-5-03"
+             style="stroke-width:0.264583"
+             x="52.957569"
+             y="-140.25351">Container:</tspan><tspan
+             sodipodi:role="line"
+             style="stroke-width:0.264583"
+             x="52.957569"
+             y="-129.67017"
+             id="tspan1558-1-9-1">default_environment</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+           x="52.957569"
+           y="-113.44845"
+           id="text2852-0-76-90"><tspan
+             sodipodi:role="line"
+             style="stroke-width:0.264583"
+             x="52.957569"
+             y="-113.44845"
+             id="tspan2856-4-6-05">core.py</tspan><tspan
+             sodipodi:role="line"
+             style="stroke-width:0.264583"
+             x="52.957569"
+             y="-102.86511"
+             id="tspan23780-6">  check(key)</tspan></text>
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect5800-6-6-9"
+           width="100.26062"
+           height="36.59306"
+           x="49.946529"
+           y="-122.72723" />
+      </g>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect850-5-9-8-8-9-9"
+         width="100.26103"
+         height="64.277657"
+         x="75.724289"
+         y="26.492321"
+         clip-path="url(#clipath_lpe_path-effect29430-4-7)"
+         inkscape:path-effect="#path-effect29430-4-7"
+         sodipodi:type="rect"
+         transform="translate(-24.766338,-188.02421)"
+         d="M 75.724289,26.492321 H 175.98532 V 90.769978 H 75.724289 Z" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect850-5-9-8-8-93-7"
+         width="100.26103"
+         height="64.277657"
+         x="75.724289"
+         y="26.492321"
+         clip-path="url(#clipath_lpe_path-effect29430-8-6)"
+         inkscape:path-effect="#path-effect29430-8-4"
+         sodipodi:type="rect"
+         transform="translate(-12.635747,-198.13304)"
+         d="M 75.724289,26.492321 H 175.98532 V 90.769978 H 75.724289 Z" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-4-16-6)"
+       d="m 112.79156,-511.01719 0.14701,101.10367 -102.134371,0.72079"
+       id="path29550-1-2-1"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.34648;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-4-16-6-1)"
+       d="m 157.84029,-848.99913 0.2389,112.79553 -165.9772501,0.80414"
+       id="path29550-1-2-1-0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-4-16-6-2)"
+       d="m -128.13601,-960.37343 78.195751,-0.14821 0.166555,35.70686"
+       id="path29550-1-2-1-3"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-4-16-6-2-2)"
+       d="m -118.8472,-966.78012 111.0091706,-0.1722 0.2364468,41.48735"
+       id="path29550-1-2-1-3-6"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.910269;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-4-16-6-2-2-1)"
+       d="m -8.2676422,-898.1515 -0.5970804,26.52768 143.8518026,0.0565"
+       id="path29550-1-2-1-3-6-0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.550453;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.40363, 4.40363;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1Mend-4-1-1-0)"
+       d="m -183.1423,-928.32048 0,-25.99962"
+       id="path29550-1-3-6-3"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1Mend-4-1-1-3-0)"
+       d="m -11.236389,-437.13823 103.10996,-73.79438"
+       id="path29550-1-3-6-2-6"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-4-3-1)"
+       d="m -145.93277,-553.99617 43.44944,-0.24672"
+       id="path29550-1-4-5"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.27726;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-4-3-1-1)"
+       d="m -49.544035,-899.69957 0.155005,112.82318"
+       id="path29550-1-4-5-0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.548284;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-4-3-1-2)"
+       d="m -188.01858,-1061.3195 0.2467,13.0616"
+       id="path29550-1-4-5-3"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-4-3-3-1)"
+       d="m -13.251979,-533.49106 41.2786,0.004"
+       id="path29550-1-4-6-5"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <g
+       id="g33379-0"
+       transform="translate(30.166462,-448.78429)"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-4-3-3-2-2)"
+         d="m -70.911719,-52.566631 0.006,-20.70459"
+         id="path29550-1-4-6-4-6"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -71.412003,-53.067584 96.950359,-0.16538 1e-6,-10.900722"
+         id="path33295-2" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.995964;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-4-3-3-2-3-0)"
+       d="m -163.16887,-513.85198 0.003,-28.31147"
+       id="path29550-1-4-6-4-8-3"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -163.16887,-513.85198 85.293868,-0.66227 10e-7,-10.90072"
+       id="path33295-9-1"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-137.13766"
+       y="-559.15088"
+       id="text8437-9"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan8435-2"
+         style="stroke-width:0.264583"
+         x="-137.13766"
+         y="-559.15088">calls</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-7.2393494"
+       y="-548.78937"
+       id="text10697-5"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan10695-0"
+         style="stroke-width:0.264583"
+         x="-7.2393494"
+         y="-548.78937">starts </tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-7.2393494"
+         y="-538.20599"
+         id="tspan12657-7">+ calls</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-14.820978"
+       y="-505.32144"
+       id="text14983-1"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan14981-1"
+         style="stroke-width:0.264583"
+         x="-14.820978"
+         y="-505.32144">result</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-149.47595"
+       y="-517.3324"
+       id="text14983-0-2"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan14981-6-3"
+         style="stroke-width:0.264583"
+         x="-149.47595"
+         y="-517.3324">result</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-94.379143"
+       y="-447.62646"
+       id="text20674-4"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan20672-8"
+         style="stroke-width:0.264583"
+         x="-94.379143"
+         y="-447.62646">mount on startup</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="19.043573"
+       y="-414.8475"
+       id="text23715-1"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan23713-6"
+         style="stroke-width:0.264583"
+         x="19.043573"
+         y="-414.8475">aux files (plot.png)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-134.00192"
+       y="-950.14771"
+       id="text23715-9-8"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan23713-1-6"
+         style="stroke-width:0.264583"
+         x="-134.00192"
+         y="-950.14771">aux files (plot.png)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-61.079788"
+       y="-973.69202"
+       id="text23715-9-8-2"
+       inkscape:export-filename="C:\Users\Julius Fiedler\Documents\ackrep\ackrep_doc\docs\source\devdoc\images\deployment_structure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan23713-1-6-4"
+         style="stroke-width:0.264583"
+         x="-61.079788"
+         y="-973.69202">results.yaml</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:1"
+       id="rect8406"
+       width="303.26456"
+       height="252.72047"
+       x="-244.5316"
+       y="-1100.8986" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-192.97662"
+       y="-1087.7572"
+       id="text9884"><tspan
+         sodipodi:role="line"
+         id="tspan9882"
+         style="stroke-width:0.264583"
+         x="-192.97662"
+         y="-1087.7572">CircleCi</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-220.27043"
+       y="-1066.0232"
+       id="text24158"><tspan
+         sodipodi:role="line"
+         id="tspan24156"
+         style="stroke-width:0.264583"
+         x="-220.27043"
+         y="-1066.0232">check-all-entities</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.728055"
+       id="rect24496"
+       width="69.517349"
+       height="22.005903"
+       x="-58.665298"
+       y="-921.60303" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-42.355225"
+       y="-908.32556"
+       id="text27594"><tspan
+         sodipodi:role="line"
+         id="tspan27592"
+         style="stroke-width:0.264583"
+         x="-42.355225"
+         y="-908.32556">artifacts</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.82539;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect31881"
+       width="312.53711"
+       height="225.60124"
+       x="-241.58626"
+       y="-798.22675" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-233.4119"
+       y="-786.00891"
+       id="text32885"><tspan
+         sodipodi:role="line"
+         id="tspan32883"
+         style="stroke-width:0.264583"
+         x="-233.4119"
+         y="-786.00891">Server</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect33583"
+       width="320.44955"
+       height="271.92722"
+       x="123.42942"
+       y="-1097.866" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="175.99525"
+       y="-1083.7136"
+       id="text34797"><tspan
+         sodipodi:role="line"
+         id="tspan34795"
+         style="stroke-width:0.264583"
+         x="175.99525"
+         y="-1083.7136">GitHub</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect35052"
+       width="95.022896"
+       height="30.326458"
+       x="138.59264"
+       y="-882.5481" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="146.42694"
+       y="-865.61584"
+       id="text36530"><tspan
+         sodipodi:role="line"
+         id="tspan36528"
+         style="stroke-width:0.264583"
+         x="146.42694"
+         y="-865.61584">ackrep_ci_results</tspan></text>
   </g>
 </svg>
